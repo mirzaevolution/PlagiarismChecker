@@ -1,0 +1,17 @@
+D:\Programming\PlagiarismCheckerPreDev\PlagiarismCheckerPreDev\Plagiarism.CoreLibrary\bin\Debug\Plagiarism.CoreLibrary.dll
+D:\Programming\PlagiarismCheckerPreDev\PlagiarismCheckerPreDev\Plagiarism.CoreLibrary\bin\Debug\Plagiarism.CoreLibrary.pdb
+D:\Programming\PlagiarismCheckerPreDev\PlagiarismCheckerPreDev\Plagiarism.CoreLibrary\bin\Debug\Annytab.Stemmer.dll
+D:\Programming\PlagiarismCheckerPreDev\PlagiarismCheckerPreDev\Plagiarism.CoreLibrary\bin\Debug\itextsharp.dll
+D:\Programming\PlagiarismCheckerPreDev\PlagiarismCheckerPreDev\Plagiarism.CoreLibrary\bin\Debug\itextsharp.xml
+D:\Programming\PlagiarismCheckerPreDev\PlagiarismCheckerPreDev\Plagiarism.CoreLibrary\obj\Debug\Plagiarism.CoreLibrary.dll
+D:\Programming\PlagiarismCheckerPreDev\PlagiarismCheckerPreDev\Plagiarism.CoreLibrary\obj\Debug\Plagiarism.CoreLibrary.pdb
+D:\Programming\PlagiarismCheckerPreDev\PlagiarismCheckerPreDev\Plagiarism.CoreLibrary\obj\Debug\Plagiarism.CoreLibrary.csprojResolveAssemblyReference.cache
+c:\users\skyline\documents\visual studio 2017\Projects\PlagiarismCheckerPreDev\Plagiarism.CoreLibrary\bin\Debug\Plagiarism.CoreLibrary.dll
+c:\users\skyline\documents\visual studio 2017\Projects\PlagiarismCheckerPreDev\Plagiarism.CoreLibrary\bin\Debug\Plagiarism.CoreLibrary.pdb
+c:\users\skyline\documents\visual studio 2017\Projects\PlagiarismCheckerPreDev\Plagiarism.CoreLibrary\bin\Debug\Annytab.Stemmer.dll
+c:\users\skyline\documents\visual studio 2017\Projects\PlagiarismCheckerPreDev\Plagiarism.CoreLibrary\bin\Debug\itextsharp.dll
+c:\users\skyline\documents\visual studio 2017\Projects\PlagiarismCheckerPreDev\Plagiarism.CoreLibrary\bin\Debug\itextsharp.xml
+c:\users\skyline\documents\visual studio 2017\Projects\PlagiarismCheckerPreDev\Plagiarism.CoreLibrary\obj\Debug\Plagiarism.CoreLibrary.csprojResolveAssemblyReference.cache
+c:\users\skyline\documents\visual studio 2017\Projects\PlagiarismCheckerPreDev\Plagiarism.CoreLibrary\obj\Debug\Plagiarism.CoreLibrary.csproj.CoreCompileInputs.cache
+c:\users\skyline\documents\visual studio 2017\Projects\PlagiarismCheckerPreDev\Plagiarism.CoreLibrary\obj\Debug\Plagiarism.CoreLibrary.dll
+c:\users\skyline\documents\visual studio 2017\Projects\PlagiarismCheckerPreDev\Plagiarism.CoreLibrary\obj\Debug\Plagiarism.CoreLibrary.pdb
