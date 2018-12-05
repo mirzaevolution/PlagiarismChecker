@@ -1,0 +1,14 @@
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.ServiceRunner.exe.config
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.ServiceRunner.exe
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.ServiceRunner.pdb
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\FluentScheduler.dll
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\MirzaCryptoHelpersV2.dll
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Topshelf.dll
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\FluentScheduler.pdb
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\FluentScheduler.xml
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\MirzaCryptoHelpersV2.xml
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Topshelf.xml
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.ServiceRunner\obj\Debug\Plagiarism.ServiceRunner.csprojResolveAssemblyReference.cache
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.ServiceRunner\obj\Debug\Plagiarism.ServiceRunner.csproj.CoreCompileInputs.cache
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.ServiceRunner\obj\Debug\Plagiarism.ServiceRunner.exe
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.ServiceRunner\obj\Debug\Plagiarism.ServiceRunner.pdb
