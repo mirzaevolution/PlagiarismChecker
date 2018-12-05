@@ -1,0 +1,4 @@
+/.vs/PlagiarismCore/v15/Server/sqlite3/*.ide-wal
+/.vs/PlagiarismCore/v15/Server/sqlite3/*.lock
+/.vs/PlagiarismCore/v15/Server/sqlite3/*.ide
+/.vs/PlagiarismCore/v15/Server/sqlite3/*.ide-shm
