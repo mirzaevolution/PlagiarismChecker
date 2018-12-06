@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace PlagiarismCore.Controllers
 {
-    public class ManageAccountController : Controller
+    public class ManageUserController : Controller
     {
-        // GET: ManageAccount
+        // GET: ManageUser
         public ActionResult Index()
         {
             return View();

@@ -1,0 +1,42 @@
+﻿@model PlagiarismCore.Models.IdentityModels.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+<div class="p-3">
+	<h3 class="text-primary"><span class="fa fa-shield"></span> Login to System</h3>
+	<br />
+	@using (Html.BeginForm())
+	{
+		@Html.AntiForgeryToken()
+
+		<div>
+			<hr />
+			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+			<div class="form-group">
+				@Html.LabelFor(model => model.UserName)
+				@Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Password)
+				@Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+			</div>
+
+			<div class="custom-control custom-checkbox">
+				<input type="checkbox" name="RememberMe" id="RememberMe" class="custom-control-input" />
+				@Html.LabelFor(model => model.RememberMe, htmlAttributes: new { @class = "custom-control-label" })
+			</div>
+			<br />
+			<input type="submit" value="Login" class="btn btn-primary" />
+		</div>
+	}
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

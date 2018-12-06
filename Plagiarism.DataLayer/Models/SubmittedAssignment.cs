@@ -9,6 +9,7 @@ namespace Plagiarism.DataLayer.Models
     public class SubmittedAssignment
     {
         public Guid Id { get; set; } = Guid.NewGuid();
+        public int Counter { get; set; }
         public string UploadedFilePath { get; set; }
         public int PercentageInteger { get; set; }
         public float Percentage { get; set; }
