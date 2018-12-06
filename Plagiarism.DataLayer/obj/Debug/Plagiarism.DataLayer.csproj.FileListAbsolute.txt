@@ -13,3 +13,17 @@ D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.DataLayer\
 D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.DataLayer\obj\Debug\Plagiarism.DataLayer.dll
 D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.DataLayer\obj\Debug\Plagiarism.DataLayer.pdb
 D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.DataLayer\obj\Debug\Plagiarism.DataLayer.csprojResolveAssemblyReference.cache
+D:\Programming\PlagiarismChecker\Plagiarism.DataLayer\bin\Debug\Plagiarism.DataLayer.dll.config
+D:\Programming\PlagiarismChecker\Plagiarism.DataLayer\bin\Debug\Plagiarism.DataLayer.dll
+D:\Programming\PlagiarismChecker\Plagiarism.DataLayer\bin\Debug\Plagiarism.DataLayer.pdb
+D:\Programming\PlagiarismChecker\Plagiarism.DataLayer\bin\Debug\EntityFramework.dll
+D:\Programming\PlagiarismChecker\Plagiarism.DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programming\PlagiarismChecker\Plagiarism.DataLayer\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Programming\PlagiarismChecker\Plagiarism.DataLayer\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Programming\PlagiarismChecker\Plagiarism.DataLayer\bin\Debug\EntityFramework.xml
+D:\Programming\PlagiarismChecker\Plagiarism.DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\Programming\PlagiarismChecker\Plagiarism.DataLayer\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Programming\PlagiarismChecker\Plagiarism.DataLayer\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Programming\PlagiarismChecker\Plagiarism.DataLayer\obj\Debug\Plagiarism.DataLayer.csprojResolveAssemblyReference.cache
+D:\Programming\PlagiarismChecker\Plagiarism.DataLayer\obj\Debug\Plagiarism.DataLayer.dll
+D:\Programming\PlagiarismChecker\Plagiarism.DataLayer\obj\Debug\Plagiarism.DataLayer.pdb

@@ -1,6 +1,5 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿.container{
+    margin-top:60px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +20,18 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+@font-face {
+    font-family: HeaderFont;
+    src: url('/Content/Fonts/Robotronics/Robotronics Italic.ttf')
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: transparent;
 }
