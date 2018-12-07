@@ -220,6 +220,39 @@ namespace PlagiarismCore.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public async Task<ActionResult> AddNewAssignment(Assignment model)
+        {
+            bool success = true;
+            List<string> errors = new List<string>();
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    Context.Assignments.Add(new Assignment
+                    {
+                        AssignmentName = model.AssignmentName
+                    });
+                    int row = await Context.SaveChangesAsync();
+                    if (row > 0)
+                        ViewBag.Message = "Assignment created successfully";
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Bad Request");
+                    success = false;
+                }
+            }
+            catch(Exception ex)
+            {
+                success = false;
+                errors.Add(ex.Message);
+                errors.Add(ex.InnerException?.Message);
+            }
+            if (success && errors.Count == 0)
+                return View("AssignmentAdministration");
+            return View("AssignmentAdministration",model);
+        }
         #endregion
 
         #region Class Administration

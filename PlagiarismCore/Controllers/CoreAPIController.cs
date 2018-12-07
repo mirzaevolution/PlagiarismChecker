@@ -52,10 +52,26 @@ namespace PlagiarismCore.Controllers
                 }).ToList();
             return Json(new { data = students }, JsonRequestBehavior.AllowGet);
         }
-        public JsonResult GetAssignments()
+        public JsonResult GetAssignments(string id)
         {
-            List<Assignment> assignments = Context.Assignments.ToList();
-            return Json(new { data = assignments }, JsonRequestBehavior.AllowGet);
+            var role = RoleManager.FindByName("Student");
+            CommonAppUser user = UserManager
+                .Users
+                .FirstOrDefault(x => x.Id.ToString().Equals(id, StringComparison.InvariantCultureIgnoreCase)
+                    && x.Roles.Any(y => y.RoleId == role.Id));
+            var userAssignments = user
+                .Assignments
+                .Select(x => new
+                {
+                    x.Id,
+                    x.AssignmentName
+                }).ToList();
+            var assignments = Context.Assignments.Select(x => new
+            {
+                x.Id,
+                x.AssignmentName
+            }).ToList().Except(userAssignments).ToList();
+            return Json(assignments, JsonRequestBehavior.AllowGet);
         }
         public JsonResult GetStudentAssignments(string id)
         {
@@ -64,7 +80,13 @@ namespace PlagiarismCore.Controllers
                 .Users
                 .FirstOrDefault(x => x.Id.ToString().Equals(id, StringComparison.InvariantCultureIgnoreCase)
                     && x.Roles.Any(y => y.RoleId == role.Id));
-            List<Assignment> assignments = user.Assignments.ToList();
+            var assignments = user
+                .Assignments
+                .Select(x => new
+                {
+                    x.Id,
+                    x.AssignmentName
+                }).ToList();
             if (user == null)
             {
                 return Json(new { Errors = new string[] { "User not found" } });
@@ -78,12 +100,133 @@ namespace PlagiarismCore.Controllers
                 .Users
                 .FirstOrDefault(x => x.Id.ToString().Equals(id, StringComparison.InvariantCultureIgnoreCase)
                     && x.Roles.Any(y => y.RoleId == role.Id));
-            List<SubmittedAssignment> assignments = user.SubmittedAssignments.ToList();
+            var assignments = user
+                .SubmittedAssignments
+                .Select(x => new
+                {
+                    AssignmentName = x.Assignment!=null?x.Assignment.AssignmentName:"Unknown",
+                    x.Description,
+                    x.PercentageInteger,
+                    Status = x.IsAccepted ? "Accepted":"Rejected",
+                    x.SubmissionDate
+                })
+                .ToList();
+
+
             if (user == null)
             {
                 return Json(new { Errors = new string[] { "User not found" } });
             }
             return Json(new { data = assignments }, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult GetAllAssignments()
+        {
+            var assignments = Context.Assignments.Select(x => new
+            {
+                x.Id,
+                x.AssignmentName
+            }).ToList();
+            return Json(new { data= assignments }, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+        [HttpPost]
+        public JsonResult PostStudentAssignment(string userId, string assignmentId)
+        {
+            bool success = true;
+            List<string> errors = new List<string>();
+            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(assignmentId))
+            {
+                success = false;
+                errors.Add("Missing required parameter(s)");
+            }
+            try
+            {
+                if (success)
+                {
+                    var student = UserManager.FindById(userId);
+                    if (student != null)
+                    {
+                        var assignment = Context.Assignments.Find(Guid.Parse(assignmentId));
+                        if (assignment != null)
+                        {
+                            student.Assignments.Add(assignment);
+                            var result =  UserManager.Update(student);
+                            if(!result.Succeeded)
+                            {
+                                success = false;
+                                errors.AddRange(result.Errors);
+                            }
+                        }
+                        else
+                        {
+                            success = false;
+                            errors.Add("Assignment not found");
+                        }
+                    }
+                    else
+                    {
+                        success = false;
+                        errors.Add("User not found");
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                success = false;
+                errors.Add(ex.ToString());
+            }
+            return Json(new { Success = success, Errors = errors });
+        }
+
+        [HttpPost]
+        public JsonResult DeleteAssignment(string userId, string assignmentId)
+        {
+            bool success = true;
+            List<string> errors = new List<string>();
+            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(assignmentId))
+            {
+                success = false;
+                errors.Add("Missing required parameter(s)");
+            }
+            try
+            {
+                if (success)
+                {
+                    var student = UserManager.FindById(userId);
+                    if (student != null)
+                    {
+                        var assignment = Context.Assignments.Find(Guid.Parse(assignmentId));
+                        if (assignment != null)
+                        {
+                            student.Assignments.Remove(assignment);
+                            var result = UserManager.Update(student);
+                            if (!result.Succeeded)
+                            {
+                                success = false;
+                                errors.AddRange(result.Errors);
+                            }
+                        }
+                        else
+                        {
+                            success = false;
+                            errors.Add("Assignment not found");
+                        }
+                    }
+                    else
+                    {
+                        success = false;
+                        errors.Add("User not found");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                success = false;
+                errors.Add(ex.ToString());
+            }
+            return Json(new { Success = success, Errors = errors });
         }
         #endregion
     }

@@ -1,56 +1,29 @@
 ﻿let Ajax = {
     Init: function () {
-        this.LoadClasses();
         this.LoadAssignments();
-        this.LoadSubmittedAssignment();
-    },
-    LoadClasses: function () {
-        var url = "/CoreAPI/GetClasses";
-        $.ajax({
-            url: url,
-            beforeSend: function () {
-                console.log(".....Requesting data from " + url);
-            },
-            success: function (response) {
-                console.log(".....Data successfully retrieved from " + url);
-                $("#ClassID").empty();
-                if (response.length > 0) {
-                    $.each(response, (index, value) => {
-                        $("#ClassID").append("<option value='" + value.ID + "'>" + value.Text + "</option>");
-                    });
-                    $("#ClassID").val($("#ClassIDHidden").val());
-                }
-
-            },
-            error: function () {
-                console.log(".....Data failed to receive from " + url);
-            }
-        });
     },
     LoadAssignments: function () {
-        var userId = $("#ID").val();
-        var url = "/CoreAPI/GetAssignments/" + userId;
-        $.ajax({
-            url: url,
-            beforeSend: function () {
-                console.log(".....Requesting data from " + url);
-            },
-            success: function (response) {
-                console.log(".....Data successfully retrieved from " + url);
-                $("#AssignmentSelect").empty();
-                if (response.length > 0) {
-                    
-                    $.each(response, (index, value) => {
-                        $("#AssignmentSelect").append("<option id='" + value.Id + "' value='" + value.Id + "'>" + value.AssignmentName + "</option>");
-                    });
-
+        var url = "/CoreAPI/GetAllAssignments";
+        $("#AssignmentTable").DataTable({
+            ajax: url,
+            columns: [
+                { data: "AssignmentName" },
+                {
+                    data: "Id",
+                    render: function (data, type) {
+                        if (type === 'display') {
+                            data = "<button class='btn btn-info' onclick='Buttons.ShowEdit(\"" + data + "\")'>Edit</button>";
+                        }
+                        return data;
+                    }
                 }
-
-            },
-            error: function () {
-                console.log(".....Data failed to receive from " + url);
-            }
-        });
+            ],
+            searching: false,
+            search: false,
+            paging: false,
+            info: false,
+            ordering: false
+        })
     },
     LoadSubmittedAssignment: function () {
         var id = $("#ID").val();
@@ -65,7 +38,7 @@
                 {
                     data: "SubmissionDate",
                     render: function (data, type) {
-                        if (type === 'display') 
+                        if (type === 'display')
                             data = moment(data).format('LLL');
                         return data;
                     }
@@ -80,7 +53,7 @@
 let Page = {
     Init: function () {
         this.CheckMessage();
-        this.AssignmentTable();
+        //this.AssignmentTable();
     },
     CheckMessage: function () {
         var message = $("#Message").val();
@@ -175,7 +148,7 @@ let Buttons = {
                     Ajax.LoadAssignments();
 
                     Page.AssignmentTable();
-                    
+
                     alert("Assignment has been removed from student list");
                 } else {
                     console.log(response.Errors);
@@ -190,7 +163,7 @@ let Buttons = {
     }
 }
 $(document).ready(function () {
-    Buttons.Init();
-    Page.Init();
+    //Buttons.Init();
     Ajax.Init();
+    Page.Init();
 });

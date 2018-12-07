@@ -17,6 +17,7 @@ namespace Plagiarism.DataLayer.Models
         public bool IsAccepted { get; set; }
         public bool IsChecked { get; set; } = false;
         public string Data { get; set; }
+        public DateTime SubmissionDate { get; set; }
         public virtual Assignment Assignment { get; set; }
         public virtual ICollection<CommonAppUser> CommonAppUsers { get; set; }
     }

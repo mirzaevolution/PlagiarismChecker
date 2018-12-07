@@ -1,7 +1,36 @@
-﻿
+﻿@using PlagiarismCore.Models.IdentityModels
+@model  AssignmentModel
 @{
-    ViewBag.Title = "Assignments Administration";
+	ViewBag.Title = "Assignments Administration";
 }
+<h3 class="text-primary"><span class="fa fa-tasks"></span> Assignments Administration</h3>
 
-<h2>Assignments Administration</h2>
+@Html.Hidden("Message", (string)ViewBag.Message)
+<form class="mt-5" method="post" action="@Url.Action("AddNewAssignment","ManageAdmin")">
+	@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+	<div class="form-group">
+		@Html.AntiForgeryToken()
+		@Html.LabelFor(x => x.AssignmentName)
+		@Html.EditorFor(x => x.AssignmentName, new { htmlAttributes = new { @class = "form-control" } })
+		@Html.ValidationMessageFor(x => x.AssignmentName)
+	</div>
+	<button class="btn btn-success" type="submit"><span class="fa fa-plus"></span> Add New Assignment</button>
+</form>
+<br />
+<div>
+	<table id="AssignmentTable" class="table display nowrap" style="width:100%">
+		<thead class="bg-primary text-light">
+			<tr>
+				<th>Assignment Name</th>
+				<th></th>
+			</tr>
 
+		</thead>
+
+	</table>
+
+</div>
+
+@section scripts{
+	<script src="~/Scripts/PlagiarismChecker/ManageAdmin/AssignmentAdministration.js"></script>
+}

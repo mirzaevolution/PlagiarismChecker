@@ -193,9 +193,14 @@
     <Compile Include="Migrations\201812060623291_InitialLoad.Designer.cs">
       <DependentUpon>201812060623291_InitialLoad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812061811418_AddSubmissionDate.cs" />
+    <Compile Include="Migrations\201812061811418_AddSubmissionDate.Designer.cs">
+      <DependentUpon>201812061811418_AddSubmissionDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Exceptions\CustomException.cs" />
     <Compile Include="Models\Exceptions\ErrorModel.cs" />
+    <Compile Include="Models\IdentityModels\AssignmentModel.cs" />
     <Compile Include="Models\IdentityModels\EditStudentModel.cs" />
     <Compile Include="Models\IdentityModels\LoginModel.cs" />
     <Compile Include="Models\IdentityModels\NewStudentModel.cs" />
@@ -501,6 +506,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\AddNewStudent.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\StudentAdministration.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\StudentDetail.js" />
@@ -514,6 +523,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\PlagiarismChecker\ManageAdmin\AssignmentAdministration.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -573,6 +583,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201812060623291_InitialLoad.resx">
       <DependentUpon>201812060623291_InitialLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061811418_AddSubmissionDate.resx">
+      <DependentUpon>201812061811418_AddSubmissionDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

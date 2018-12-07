@@ -24,6 +24,7 @@ namespace PlagiarismCore
                       "~/Scripts/bootstrap.min.js",
                       "~/Scripts/DataTables/jquery.dataTables.min.js",
                       "~/Scripts/DataTables/dataTables.bootstrap4.min.js",
+                      "~/Scripts/moment.min.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
