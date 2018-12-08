@@ -1,8 +1,12 @@
 ﻿let Ajax = {
     Init: function () {
         this.LoadAssignments();
+        this.LoadSubmittedAssignment();
     },
     LoadAssignments: function () {
+        if ($.fn.DataTable.isDataTable("#AssignmentTable")) {
+            $('#AssignmentTable').DataTable().clear().destroy();
+        }
         var url = "/CoreAPI/GetAllAssignments";
         $("#AssignmentTable").DataTable({
             ajax: url,
@@ -10,9 +14,9 @@
                 { data: "AssignmentName" },
                 {
                     data: "Id",
-                    render: function (data, type) {
+                    render: function (data, type,row) {
                         if (type === 'display') {
-                            data = "<button class='btn btn-info' onclick='Buttons.ShowEdit(\"" + data + "\")'>Edit</button>";
+                            data = "<button class='btn btn-info' onclick='Buttons.ShowEdit(\"" + data + "\",\"" + row.AssignmentName + "\")'>Edit</button>";
                         }
                         return data;
                     }
@@ -26,15 +30,31 @@
         })
     },
     LoadSubmittedAssignment: function () {
+        if ($.fn.DataTable.isDataTable("#SubmittedAssignmentTable")) {
+            $('#SubmittedAssignmentTable').DataTable().clear().destroy();
+        }
         var id = $("#ID").val();
-        var url = "/CoreAPI/GetStudentSubmittedAssignments/" + id;
+        var url = "/CoreAPI/GetAllSubmittedAssignments";
         $("#SubmittedAssignmentTable").DataTable({
             ajax: url,
             columns: [
-                { data: "AssignmentName" },
-                { data: "Description" },
+                { data: "StudentName" },
+                { data: "StudentClass" },
+                { data: "SubjectName" },
+                { data: "Title" },
+                { data: "Counter" },
+                {
+                    data: "UploadedFilePath",
+                    render: function (data, type, row) {
+                        if (type === 'display') {
+                            data = "<a href='" + data + "' target='_blank'>Download File</a>";
+                        }
+                        return data;
+                    } },
                 { data: "PercentageInteger" },
+                { data: "Description" },
                 { data: "Status" },
+                { data: "Score" },
                 {
                     data: "SubmissionDate",
                     render: function (data, type) {
@@ -42,10 +62,13 @@
                             data = moment(data).format('LLL');
                         return data;
                     }
-                }
+                },
+                { data: "IsChecked" },
+
             ],
             info: false,
-            paging: false
+            paging: true,
+            scrollX: true
         });
 
     }
@@ -74,7 +97,7 @@ let Page = {
                     "data": "Id",
                     "render": function (data, type, row, meta) {
                         if (type === "display") {
-                            data = "<button onclick='Buttons.DeleteAssignment(\"" + data + "\");' class='btn btn-danger btn-remove-assignment' data-id='" + data + "'>Delete</button>";
+                            data = "<button onclick='Buttons.EditAssignment(\"" + data + "\");' class='btn btn-danger btn-remove-assignment' data-id='" + data + "'>Delete</button>";
                         }
                         return data;
                     }
@@ -82,84 +105,84 @@ let Page = {
             ],
             searching: false,
             search: false,
-            paging: false,
+            paging: true,
             info: false,
-            ordering: false
+            ordering: false,
+            scrollY: "200px",
+            scrollCollapse: true,
         });
     }
 }
 let Buttons = {
-    Init: function () {
-        $("#ButtonDelete").click(function () {
-            $("#FormDelete").submit();
-        });
-        $("#ButtonAddNewAssignment").click(function () {
-            var userId = $("#ID").val();
-            var assignmentId = $("#AssignmentSelect").val();
+    SaveEdit: function () {
+        var assignmentNameEdit = $("#AssignmentNameEdit").val();
+        var assignmentId = $("#AssignmentIdHidden").val();
+
+        if (assignmentNameEdit.trim() === '') {
+            alert('Assignment name cannot be empty');
+        } else {
+
             $.ajax({
-                url: "/CoreApi/PostStudentAssignment",
+                url: "/CoreApi/EditAssignment",
                 method: "POST",
                 data: {
-                    userId: userId,
-                    assignmentId: assignmentId
+                    Id: assignmentId,
+                    AssignmentName: assignmentNameEdit,
                 },
                 beforeSend: function () {
                     $("#ButtonAddNewAssignment").prop("disabled", true);
 
                 },
                 success: function (response) {
-                    $("#ButtonAddNewAssignment").prop("disabled", false);
-
+                    $("#ModalEditAssignment").modal("hide");
+                    Ajax.LoadAssignments();
                     if (response.Success) {
-                        Ajax.LoadAssignments();
-                        Page.AssignmentTable();
-
-                        alert("Assignment has been added to student list");
+                        alert("Data has been updated successfully");
                     } else {
+                        alert("An error occured when updating data");
                         console.log(response.Errors);
-                        alert("An error occured while adding assignment to list");
                     }
+
                 },
                 error: function () {
-                    $("#ButtonAddNewAssignment").prop("disabled", true);
-                    alert("An error occured while posting data to server");
+                    alert("An error occured while updating data in the server");
                 }
             })
+        }
+
+    },
+    ShowEdit: function (id, data) {
+        $("#AssignmentIdHidden").val(id);
+        $("#AssignmentNameEdit").val(data);
+        $("#ModalEditAssignment").modal({
+            backdrop: "static"
         });
     },
-    DeleteAssignment: function (id) {
-        var userId = $("#ID").val();
-        var assignmentId = id;
+    RemoveAssignment: function () {
+        var assignmentId = $("#AssignmentIdHidden").val();
+
         $.ajax({
             url: "/CoreApi/DeleteAssignment",
             method: "POST",
             data: {
-                userId: userId,
-                assignmentId: assignmentId
-            },
-            beforeSend: function () {
-                $("#ButtonAddNewAssignment").prop("disabled", true);
-
+                Id: assignmentId,
             },
             success: function (response) {
-                $("#ButtonAddNewAssignment").prop("disabled", false);
-
+                $("#ModalEditAssignment").modal("hide");
+                Ajax.LoadAssignments();
                 if (response.Success) {
-                    Ajax.LoadAssignments();
-
-                    Page.AssignmentTable();
-
-                    alert("Assignment has been removed from student list");
+                    alert("Data has been removed successfully");
                 } else {
+                    alert("An error occured when removing data");
                     console.log(response.Errors);
-                    alert("An error occured while removing assignment from the list");
                 }
+
             },
             error: function () {
-                $("#ButtonAddNewAssignment").prop("disabled", true);
                 alert("An error occured while removing data in the server");
             }
         })
+
     }
 }
 $(document).ready(function () {

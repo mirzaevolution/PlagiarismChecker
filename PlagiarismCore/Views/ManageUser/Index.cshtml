@@ -1,0 +1,40 @@
+﻿
+@{
+	ViewBag.Title = "Manage Assignments";
+}
+
+<input type="hidden" id="IDHidden" value="@((string)ViewBag.UserID)"/>
+<h3 class="text-primary"><span class="fa fa-sticky-note"></span> Manage Assignments</h3>
+
+<div class="mt-5">
+	<a class="btn btn-success" href="@Url.Action("AddSubmission","ManageUSer")">
+		<span class="fa fa-plus"></span> Submit Assignment
+	</a>
+</div>
+<br />
+<div>
+	<table id="SubmittedAssignmentTable" class="table display nowrap" style="width:100%">
+		<thead class="bg-primary text-light">
+			<tr>
+				<th>Subject</th>
+				<th>Title</th>
+				<th>Submission Rank</th>
+				<th>Description</th>
+				<th>Percentage %</th>
+				<th>Status</th>
+				<th>Score</th>
+				<th>Uploaded File</th>
+				<th>Checking Status</th>
+				<th>Submission Time</th>
+			</tr>
+
+		</thead>
+
+	</table>
+
+</div>
+
+@section scripts{
+
+	<script src="~/Scripts/PlagiarismChecker/ManageUser/ManageAssignments.js"></script>
+}

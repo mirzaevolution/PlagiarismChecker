@@ -55,10 +55,14 @@
     LoadSubmittedAssignment: function () {
         var id = $("#ID").val();
         var url = "/CoreAPI/GetStudentSubmittedAssignments/" + id;
+        if ($.fn.DataTable.isDataTable("#SubmittedAssignmentTable")) {
+            $('#SubmittedAssignmentTable').DataTable().clear().destroy();
+        }
         $("#SubmittedAssignmentTable").DataTable({
             ajax: url,
             columns: [
                 { data: "AssignmentName" },
+                { data: "Title" },
                 { data: "Description" },
                 { data: "PercentageInteger" },
                 { data: "Status" },
@@ -69,8 +73,29 @@
                             data = moment(data).format('LLL');
                         return data;
                     }
+                },
+                {
+                    data: "UploadedFilePath",
+                    render: function (data, type, row) {
+                        if (type === 'display') {
+                            data = "<a href='" + data + "' target='_blank'>Download File</a>";
+                        }
+                        return data;
+                    }
+                },
+                { data: "Score" },
+                {
+                    data: "Id",
+                    render: function (data, type, row) {
+                        if (type === 'display') {
+                            data = '<button class="btn btn-primary" onclick="Buttons.ShowEditScore(\'' + data + '\',\'' + row.Score + '\')"> Edit Score</button>';
+                        }
+                        return data;
+                    }
                 }
+
             ],
+            scrollX: true,
             info: false,
             paging: false
         });
@@ -158,7 +183,7 @@ let Buttons = {
         var userId = $("#ID").val();
         var assignmentId = id;
         $.ajax({
-            url: "/CoreApi/DeleteAssignment",
+            url: "/CoreApi/DeleteUserAssignment",
             method: "POST",
             data: {
                 userId: userId,
@@ -187,6 +212,46 @@ let Buttons = {
                 alert("An error occured while removing data in the server");
             }
         })
+    },
+    SaveEdit: function () {
+        var AssignmentScoreEdit = $("#AssignmentScoreEdit").val();
+        var assignmentId = $("#AssignmentIdHidden").val();
+
+        if (AssignmentScoreEdit.trim() === '') {
+            alert('Score cannot be empty');
+        } else {
+
+            $.ajax({
+                url: "/CoreApi/EditStudentAssignmentScore",
+                method: "POST",
+                data: {
+                    assignmentId: assignmentId,
+                    score: AssignmentScoreEdit,
+                },
+                success: function (response) {
+                    $("#ModalEditScore").modal("hide");
+                    Ajax.LoadSubmittedAssignment();
+                    if (response.Success) {
+                        alert("Score has been updated successfully");
+                    } else {
+                        alert("An error occured when updating score");
+                        console.log(response.Errors);
+                    }
+
+                },
+                error: function () {
+                    alert("An error occured while updating data in the server");
+                }
+            })
+        }
+
+    },
+    ShowEditScore: function (id,data) {
+        $("#AssignmentIdHidden").val(id);
+        $("#AssignmentScoreEdit").val(data);
+        $("#ModalEditScore").modal({
+            backdrop: "static"
+        });
     }
 }
 $(document).ready(function () {

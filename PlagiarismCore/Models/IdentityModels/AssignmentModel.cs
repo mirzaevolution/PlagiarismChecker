@@ -5,7 +5,7 @@ namespace PlagiarismCore.Models.IdentityModels
     public class AssignmentModel
     {
         [Required]
-        [Display(Name = "Assignment Name")]
+        [Display(Name = "Subject Name")]
         public string AssignmentName { get; set; }
     }
 }

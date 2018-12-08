@@ -1,0 +1,15 @@
+﻿
+@{
+	ViewBag.Title = "Waiting For Query";
+}
+
+<h3>
+	<span class="fa fa-info-circle"></span> Submission is Under Review
+</h3>
+
+<p class="text-primary">
+	Your document is currently under review by Admin. <br />
+	Once it's completed, you can view it under "Manage Assignments" menu.
+</p>
+<br />
+@Html.ActionLink("Back to Index", "Index", null, new { @class = "btn btn-primary" })

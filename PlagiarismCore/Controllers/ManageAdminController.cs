@@ -83,7 +83,12 @@ namespace PlagiarismCore.Controllers
             }
             else if (success && errors.Count > 0)
             {
-                ModelState.AddModelError("", errors.FirstOrDefault());
+                
+                foreach(string error in errors)
+                {
+                    ModelState.AddModelError("", error);
+
+                }
                 return View(model);
             }
             else
@@ -110,7 +115,7 @@ namespace PlagiarismCore.Controllers
                     Errors = new List<string>() { "Student not found" }
                 };
             }
-            EditStudentModel model = new EditStudentModel
+            StudentModel model = new StudentModel
             {
                 ID = user.Id.ToString(),
                 Email = user.Email,
@@ -124,7 +129,7 @@ namespace PlagiarismCore.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> StudentDetail(EditStudentModel model)
+        public async Task<ActionResult> StudentDetail(StudentModel model)
         {
             List<string> errors = new List<string>();
             bool success = true;
@@ -177,7 +182,11 @@ namespace PlagiarismCore.Controllers
             }
             else if (success && errors.Count > 0)
             {
-                ModelState.AddModelError("", errors.FirstOrDefault());
+                foreach (string error in errors)
+                {
+                    ModelState.AddModelError("", error);
+
+                }
                 return View(model);
             }
             else
@@ -229,13 +238,23 @@ namespace PlagiarismCore.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Context.Assignments.Add(new Assignment
+                    var prevAssignment = Context.Assignments.FirstOrDefault(x => x.AssignmentName.Equals(model.AssignmentName, StringComparison.InvariantCultureIgnoreCase));
+                    if (prevAssignment == null)
                     {
-                        AssignmentName = model.AssignmentName
-                    });
-                    int row = await Context.SaveChangesAsync();
-                    if (row > 0)
-                        ViewBag.Message = "Assignment created successfully";
+                        Context.Assignments.Add(new Assignment
+                        {
+                            AssignmentName = model.AssignmentName
+                        });
+                        int row = await Context.SaveChangesAsync();
+                        if (row > 0)
+                            ViewBag.Message = "Assignment created successfully";
+                        else
+                            ViewBag.Message = "Failed when adding assignment to database";
+                    }
+                    else
+                    {
+                        ViewBag.Message = "Assignment already exists in database!";
+                    }
                 }
                 else
                 {
@@ -249,16 +268,70 @@ namespace PlagiarismCore.Controllers
                 errors.Add(ex.Message);
                 errors.Add(ex.InnerException?.Message);
             }
+
             if (success && errors.Count == 0)
-                return View("AssignmentAdministration");
+            {
+                model.AssignmentName = "";
+                return View("AssignmentAdministration",model);
+            }
+            foreach (string error in errors)
+            {
+                ModelState.AddModelError("", error);
+
+            }
             return View("AssignmentAdministration",model);
         }
+
+        
         #endregion
 
         #region Class Administration
         public ActionResult ClassAdministration()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult PostNewClass(StudentClass model)
+        {
+            List<string> errors = new List<string>();
+            bool success = true;
+            try
+            {
+                if(ModelState.IsValid)
+                {
+                    Context.Classes.Add(new Class
+                    {
+                        ClassName = model.ClassName
+                    });
+                    var result = Context.SaveChanges();
+                    if (result <= 0)
+                    {
+                        success = false;
+                        errors.Add("An error occured while adding data to database");
+
+                    }
+                }
+                else
+                {
+                    success = false;
+                    errors.Add("Please fill required fields!");
+                }
+            }
+            catch (Exception ex)
+            {
+                success = false;
+                errors.Add(ex.ToString());
+            }
+            if(success && errors.Count == 0)
+            {
+                return RedirectToAction("ClassAdministration");
+            }
+            else
+            {
+                string error = errors.Aggregate((current, next) => current + "\n" + next);
+                ViewBag.Message = error;
+                return View("ClassAdministration", model);
+            }
         }
         #endregion
 

@@ -144,3 +144,4 @@ D:\Programming\PlagiarismChecker\PlagiarismCore\obj\Debug\PlagiarismCore.csproj.
 D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.InitialLoad.resources
 D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\PlagiarismCore\obj\Debug\PlagiarismCore.csproj.GenerateResource.Cache
 D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.AddSubmissionDate.resources
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.AddTwoFields.resources

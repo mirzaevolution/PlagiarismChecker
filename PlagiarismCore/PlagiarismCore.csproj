@@ -197,6 +197,10 @@
     <Compile Include="Migrations\201812061811418_AddSubmissionDate.Designer.cs">
       <DependentUpon>201812061811418_AddSubmissionDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812080804407_AddTwoFields.cs" />
+    <Compile Include="Migrations\201812080804407_AddTwoFields.Designer.cs">
+      <DependentUpon>201812080804407_AddTwoFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Exceptions\CustomException.cs" />
     <Compile Include="Models\Exceptions\ErrorModel.cs" />
@@ -204,6 +208,9 @@
     <Compile Include="Models\IdentityModels\EditStudentModel.cs" />
     <Compile Include="Models\IdentityModels\LoginModel.cs" />
     <Compile Include="Models\IdentityModels\NewStudentModel.cs" />
+    <Compile Include="Models\IdentityModels\StudentClass.cs" />
+    <Compile Include="Models\IdentityModels\SubmissionModel.cs" />
+    <Compile Include="Models\IdentityModels\SubmittedAssignmentList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -511,8 +518,11 @@
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\AddNewStudent.js" />
+    <Content Include="Scripts\PlagiarismChecker\ManageAdmin\ClassAdministration.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\StudentAdministration.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\StudentDetail.js" />
+    <Content Include="Scripts\PlagiarismChecker\ManageUser\AddSubmission.js" />
+    <Content Include="Scripts\PlagiarismChecker\ManageUser\ManageAssignments.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -554,12 +564,16 @@
     <Content Include="Views\ManageAdmin\AddStudent.cshtml" />
     <Content Include="Views\ManageAdmin\ClassAdministration.cshtml" />
     <Content Include="Views\ManageAdmin\StudentDetail.cshtml" />
+    <Content Include="Upload\document-test.pdf" />
+    <Content Include="Views\ManageUser\Index.cshtml" />
+    <Content Include="Views\ManageUser\MyProfile.cshtml" />
+    <Content Include="Views\ManageUser\AddSubmission.cshtml" />
+    <Content Include="Views\ManageUser\WaitingForQuery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\CoreAPI\" />
     <Folder Include="Views\ManageAccount\" />
-    <Folder Include="Views\ManageUser\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -586,6 +600,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812061811418_AddSubmissionDate.resx">
       <DependentUpon>201812061811418_AddSubmissionDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812080804407_AddTwoFields.resx">
+      <DependentUpon>201812080804407_AddTwoFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
