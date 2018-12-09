@@ -38,7 +38,8 @@
 				</ul>
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<span class="navbar-text">Logged as @User.Identity.GetFullName() </span>
+						<a class="nav-link" href="@Url.Action("AdminProfile","ManageAdmin")"><span class="fa fa-user"></span> Logged as @User.Identity.GetFullName()</a>
+
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="@Url.Action("Logout", "Authentication")"><span class="fa fa-sign-out"></span> Logout</a>
@@ -58,7 +59,7 @@
 				</ul>
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link" href="@Url.Action("Profile","ManageUser")"><span class="fa fa-user"></span> @User.Identity.GetFullName() </a>
+						<a class="nav-link" href="@Url.Action("MyProfile","ManageUser")"><span class="fa fa-user"></span> @User.Identity.GetFullName() </a>
 					</li>
 					<li>
 						<a class="nav-link" href="@Url.Action("Logout", "Authentication")"><span class="fa fa-sign-out"></span> Logout</a>

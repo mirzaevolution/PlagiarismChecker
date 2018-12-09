@@ -204,11 +204,13 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Exceptions\CustomException.cs" />
     <Compile Include="Models\Exceptions\ErrorModel.cs" />
+    <Compile Include="Models\IdentityModels\AdminProfile.cs" />
     <Compile Include="Models\IdentityModels\AssignmentModel.cs" />
     <Compile Include="Models\IdentityModels\EditStudentModel.cs" />
     <Compile Include="Models\IdentityModels\LoginModel.cs" />
     <Compile Include="Models\IdentityModels\NewStudentModel.cs" />
     <Compile Include="Models\IdentityModels\StudentClass.cs" />
+    <Compile Include="Models\IdentityModels\StudentProfile.cs" />
     <Compile Include="Models\IdentityModels\SubmissionModel.cs" />
     <Compile Include="Models\IdentityModels\SubmittedAssignmentList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -518,11 +520,13 @@
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\AddNewStudent.js" />
+    <Content Include="Scripts\PlagiarismChecker\ManageAdmin\AdminProfile.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\ClassAdministration.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\StudentAdministration.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\StudentDetail.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageUser\AddSubmission.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageUser\ManageAssignments.js" />
+    <Content Include="Scripts\PlagiarismChecker\ManageUser\MyProfile.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -569,6 +573,7 @@
     <Content Include="Views\ManageUser\MyProfile.cshtml" />
     <Content Include="Views\ManageUser\AddSubmission.cshtml" />
     <Content Include="Views\ManageUser\WaitingForQuery.cshtml" />
+    <Content Include="Views\ManageAdmin\AdminProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

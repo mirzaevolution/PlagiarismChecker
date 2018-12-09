@@ -1,13 +1,12 @@
-﻿@model PlagiarismCore.Models.IdentityModels.StudentProfile
+﻿@model PlagiarismCore.Models.IdentityModels.AdminProfile
 
 @{
-	ViewBag.Title = "My Profile";
+	ViewBag.Title = "Admin Profile";
 }
-
 
 <input type="hidden" id="Message" value="@((string)ViewBag.Message)" />
 <div class="p-3">
-	<h4 class="text-primary">My Profile</h4>
+	<h4 class="text-primary">Admin Profile</h4>
 	@using (Html.BeginForm())
 	{
 		@Html.AntiForgeryToken()
@@ -15,12 +14,6 @@
 		<div class="form-horizontal">
 			<hr />
 			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-			<div class="form-group">
-				@Html.LabelFor(model => model.FullName)
-				@Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control" } })
-				@Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
-			</div>
-
 			<div class="form-group">
 				@Html.LabelFor(model => model.Email)
 				@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
@@ -43,13 +36,12 @@
 			</fieldset>
 			<br /><br />
 			<input type="submit" value="Update" class="btn btn-primary" />
-			@Html.ActionLink("Cancel", "Index", "ManageUser", null, new { @class = "btn btn-danger" })
+			@Html.ActionLink("Cancel", "StudentAdministration", "ManageUser", null, new { @class = "btn btn-danger" })
 		</div>
 	}
 
 </div>
-
 @section Scripts {
 	@Scripts.Render("~/bundles/jqueryval")
-	<script src="~/Scripts/PlagiarismChecker/ManageUser/MyProfile.js"></script>
+	<script src="~/Scripts/PlagiarismChecker/ManageAdmin/AdminProfile.js"></script>
 }

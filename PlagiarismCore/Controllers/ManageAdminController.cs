@@ -125,7 +125,6 @@ namespace PlagiarismCore.Controllers
             };
             return View(model);
         }
-        #endregion
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -223,6 +222,8 @@ namespace PlagiarismCore.Controllers
             await UserManager.DeleteAsync(user);
             return RedirectToAction("StudentAdministration");
         }
+        #endregion
+
 
         #region AssignmentAdministration
         public ActionResult AssignmentAdministration()
@@ -331,6 +332,97 @@ namespace PlagiarismCore.Controllers
                 string error = errors.Aggregate((current, next) => current + "\n" + next);
                 ViewBag.Message = error;
                 return View("ClassAdministration", model);
+            }
+        }
+        #endregion
+
+
+        #region Profile
+        public async Task<ActionResult> AdminProfile()
+        {
+            CommonAppUser commonAppUser =
+                await UserManager.FindByIdAsync(
+                            User.Identity.GetUserId<string>()
+                        );
+
+            return View(new AdminProfile
+            {
+                Email = commonAppUser.Email
+            });
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> AdminProfile(AdminProfile model)
+        {
+            List<string> errors = new List<string>();
+            bool success = true;
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    CommonAppUser commonAppUser =
+                                    await UserManager.FindByIdAsync(
+                                                User.Identity.GetUserId<string>()
+                                            );
+                
+                    commonAppUser.Email = model.Email;
+                    var updateResult = await UserManager.UpdateAsync(commonAppUser);
+
+                    if (updateResult.Succeeded)
+                    {
+                        if (!string.IsNullOrEmpty(model.NewPassword) &&
+                            !string.IsNullOrEmpty(model.CurrentPassword))
+                        {
+                            updateResult = await UserManager.ChangePasswordAsync(commonAppUser.Id,
+                                    model.CurrentPassword, model.NewPassword
+                                );
+                            if (!updateResult.Succeeded)
+                            {
+                                success = false;
+                                errors.Add("Error while changing user password");
+                            }
+                            else
+                            {
+
+                                ViewBag.Message = "Profile has been saved successfully";
+                            }
+                        }
+                        else
+                        {
+                            ViewBag.Message = "Profile has been saved successfully";
+                        }
+                    }
+                    else
+                    {
+                        success = false;
+                        errors.Add("Error while updating the profile");
+                        errors.AddRange(updateResult.Errors);
+                    }
+                }
+                else
+                {
+                    success = false;
+                    errors.Add("Please complete all fields");
+                }
+            }
+            catch (Exception ex)
+            {
+                success = false;
+                errors.Add(ex.ToString());
+            }
+            model.CurrentPassword = "";
+            model.NewPassword = "";
+            if (success && errors.Count == 0)
+            {
+                return View(model);
+            }
+            else
+            {
+                foreach (string error in errors)
+                {
+                    ModelState.AddModelError("", error);
+                }
+                return View(model);
             }
         }
         #endregion

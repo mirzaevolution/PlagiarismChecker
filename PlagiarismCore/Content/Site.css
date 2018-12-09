@@ -26,11 +26,3 @@ textarea {
     src: url('/Content/Fonts/Robotronics/Robotronics Italic.ttf')
 }
 
-footer {
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    line-height: 60px; /* Vertically center the text there */
-    background-color: transparent;
-}
