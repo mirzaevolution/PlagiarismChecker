@@ -84,6 +84,8 @@
                     }
                 },
                 { data: "Score" },
+                { data: "ScoreStatus" },
+
                 {
                     data: "Id",
                     render: function (data, type, row) {

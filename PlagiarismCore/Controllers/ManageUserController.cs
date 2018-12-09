@@ -68,17 +68,18 @@ namespace PlagiarismCore.Controllers
                         if (assignment != null)
                         {
                             HttpPostedFileBase uploadedFile = Request.Files["AssignmentFile"];
-                            string data;
-                            using (Stream stream = uploadedFile.InputStream)
-                            {
-                                data = PDFReader.ExtractTextFromPdf(stream);
-                            }
                             string randomFileName = Path.GetFileName(uploadedFile.FileName) + "_"
                                 + DateTime.Now.Ticks.ToString() + Path.GetExtension(uploadedFile.FileName);
                             string relativePath = "~/Upload/" + randomFileName;
                             string path = Path.Combine(Server.MapPath("~/Upload"), randomFileName);
                             uploadedFile.SaveAs(path);
                             model.UploadedFilePath = relativePath;
+                            string data;
+                            using (Stream stream = new FileStream(path,FileMode.Open,FileAccess.Read,FileShare.Read))
+                            {
+                                data = PDFReader.ExtractTextFromPdf(stream);
+                            }
+                            
                             model.Data = data;
                             int? latestCounter =
                                 Context.SubmittedAssignments.Where(x => x.Assignment.Id == assignment.Id)
@@ -89,12 +90,13 @@ namespace PlagiarismCore.Controllers
                             if (latestCounter!=null)
                             {
                                 model.Rank = latestCounter.Value + 1;
+                                
                                 model.UploadedTime = DateTime.Now;
                                 CommonAppUser commonAppUser =
                                     await UserManager.FindByIdAsync(
                                                 User.Identity.GetUserId<string>()
                                             );
-                                commonAppUser.SubmittedAssignments.Add(new SubmittedAssignment
+                                var submit = new SubmittedAssignment
                                 {
                                     Assignment = assignment,
                                     Counter = model.Rank,
@@ -102,7 +104,15 @@ namespace PlagiarismCore.Controllers
                                     SubmissionDate = model.UploadedTime,
                                     UploadedFilePath = model.UploadedFilePath,
                                     Title = model.Title
-                                });
+                                };
+                                if (model.Rank == 1 || latestCounter.Value == 0)
+                                {
+                                    submit.Description = "First Submission";
+                                    submit.IsAccepted = true;
+                                    submit.IsChecked = true;
+                                }
+                                commonAppUser.SubmittedAssignments.Add(submit);
+                                    
                                 var result = await UserManager.UpdateAsync(commonAppUser);
                                 if(!result.Succeeded)
                                 {

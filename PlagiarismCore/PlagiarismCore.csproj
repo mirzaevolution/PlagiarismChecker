@@ -385,6 +385,7 @@
     <Content Include="Content\Fonts\Robotronics\Robotronics.png" />
     <Content Include="Content\Images\db1.png" />
     <Content Include="Content\Images\db2.png" />
+    <Content Include="Content\Images\dashboard.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />

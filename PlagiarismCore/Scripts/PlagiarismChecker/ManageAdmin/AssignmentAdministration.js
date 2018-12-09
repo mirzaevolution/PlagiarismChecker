@@ -55,6 +55,7 @@
                 { data: "Description" },
                 { data: "Status" },
                 { data: "Score" },
+                { data: "ScoreStatus" },
                 {
                     data: "SubmissionDate",
                     render: function (data, type) {

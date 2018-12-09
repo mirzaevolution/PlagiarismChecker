@@ -19,8 +19,8 @@
                 { data: "PercentageInteger" },
                 { data: "Status" },
 
-
                 { data: "Score" },
+                { data: "ScoreStatus" },
                 {
                     data: "UploadedFilePath",
                     render: function (data, type, row) {

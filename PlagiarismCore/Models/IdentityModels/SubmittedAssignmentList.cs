@@ -17,6 +17,7 @@ namespace PlagiarismCore.Models.IdentityModels
         public string Description { get; set; }
         public string IsChecked { get; set; } 
         public short Score { get; set; }
+        public string ScoreStatus { get; set; }
         public DateTime SubmissionDate { get; set; }
         public string Status { get; set; }
 

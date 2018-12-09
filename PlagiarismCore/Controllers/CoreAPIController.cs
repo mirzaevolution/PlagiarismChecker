@@ -31,7 +31,7 @@ namespace PlagiarismCore.Controllers
         {
             if (!isAccepted && !isChecked)
                 return "Under Review";
-            else if (isChecked && isChecked)
+            else if (isAccepted && isChecked)
                 return "Accepted";
             return "Rejected";
         }
@@ -165,6 +165,7 @@ namespace PlagiarismCore.Controllers
                     x.SubmissionDate,
                     UploadedFilePath=x.UploadedFilePath.Replace("~",""),
                     x.Score,
+                    ScoreStatus = x.Score == 0 ? "Waiting" : "Done",
                     x.Counter,
                     IsChecked= x.IsChecked? "Checked":"In Review"
                 })
@@ -198,11 +199,12 @@ namespace PlagiarismCore.Controllers
                                    "Undefined" : submittedAssignment.Assignment.AssignmentName,
                     Title = submittedAssignment.Title,
                     Counter = submittedAssignment.Counter,
-                    UploadedFilePath = submittedAssignment.UploadedFilePath,
+                    UploadedFilePath = submittedAssignment.UploadedFilePath.Replace("~", ""),
                     PercentageInteger = submittedAssignment.PercentageInteger,
                     Description = submittedAssignment.Description,
                     Status = GetStatus(submittedAssignment.IsAccepted, submittedAssignment.IsChecked),
                     Score = submittedAssignment.Score,
+                    ScoreStatus = submittedAssignment.Score==0? "Waiting":"Done",
                     IsChecked = submittedAssignment.IsChecked?"Checked":"Not yet",
                     SubmissionDate = submittedAssignment.SubmissionDate
                 };
