@@ -10,6 +10,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Plagiarism.DataLayer.Models;
+using System.Data.Entity;
+using PlagiarismCore.Migrations;
 
 namespace PlagiarismCore
 {
@@ -20,6 +22,7 @@ namespace PlagiarismCore
             
             try
             {
+                Database.SetInitializer<MainContext>(new NullDatabaseInitializer<MainContext>());
                 app.CreatePerOwinContext<MainContext>((options, owin) => new MainContext());
                 app.CreatePerOwinContext<UserStore<CommonAppUser>>((options, owin) => new UserStore<CommonAppUser>(owin.Get<MainContext>()));
                 app.CreatePerOwinContext<UserManager<CommonAppUser>>((options, owin) =>

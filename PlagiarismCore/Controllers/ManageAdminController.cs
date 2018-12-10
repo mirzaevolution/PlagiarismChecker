@@ -83,7 +83,12 @@ namespace PlagiarismCore.Controllers
             }
             else if (success && errors.Count > 0)
             {
-                ModelState.AddModelError("", errors.FirstOrDefault());
+                
+                foreach(string error in errors)
+                {
+                    ModelState.AddModelError("", error);
+
+                }
                 return View(model);
             }
             else
@@ -110,7 +115,7 @@ namespace PlagiarismCore.Controllers
                     Errors = new List<string>() { "Student not found" }
                 };
             }
-            EditStudentModel model = new EditStudentModel
+            StudentModel model = new StudentModel
             {
                 ID = user.Id.ToString(),
                 Email = user.Email,
@@ -120,11 +125,10 @@ namespace PlagiarismCore.Controllers
             };
             return View(model);
         }
-        #endregion
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> StudentDetail(EditStudentModel model)
+        public async Task<ActionResult> StudentDetail(StudentModel model)
         {
             List<string> errors = new List<string>();
             bool success = true;
@@ -177,7 +181,11 @@ namespace PlagiarismCore.Controllers
             }
             else if (success && errors.Count > 0)
             {
-                ModelState.AddModelError("", errors.FirstOrDefault());
+                foreach (string error in errors)
+                {
+                    ModelState.AddModelError("", error);
+
+                }
                 return View(model);
             }
             else
@@ -214,18 +222,208 @@ namespace PlagiarismCore.Controllers
             await UserManager.DeleteAsync(user);
             return RedirectToAction("StudentAdministration");
         }
+        #endregion
+
 
         #region AssignmentAdministration
         public ActionResult AssignmentAdministration()
         {
             return View();
         }
+        [HttpPost]
+        public async Task<ActionResult> AddNewAssignment(Assignment model)
+        {
+            bool success = true;
+            List<string> errors = new List<string>();
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var prevAssignment = Context.Assignments.FirstOrDefault(x => x.AssignmentName.Equals(model.AssignmentName, StringComparison.InvariantCultureIgnoreCase));
+                    if (prevAssignment == null)
+                    {
+                        Context.Assignments.Add(new Assignment
+                        {
+                            AssignmentName = model.AssignmentName
+                        });
+                        int row = await Context.SaveChangesAsync();
+                        if (row > 0)
+                            ViewBag.Message = "Assignment created successfully";
+                        else
+                            ViewBag.Message = "Failed when adding assignment to database";
+                    }
+                    else
+                    {
+                        ViewBag.Message = "Assignment already exists in database!";
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Bad Request");
+                    success = false;
+                }
+            }
+            catch(Exception ex)
+            {
+                success = false;
+                errors.Add(ex.Message);
+                errors.Add(ex.InnerException?.Message);
+            }
+
+            if (success && errors.Count == 0)
+            {
+                model.AssignmentName = "";
+                return View("AssignmentAdministration",model);
+            }
+            foreach (string error in errors)
+            {
+                ModelState.AddModelError("", error);
+
+            }
+            return View("AssignmentAdministration",model);
+        }
+
+        
         #endregion
 
         #region Class Administration
         public ActionResult ClassAdministration()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult PostNewClass(StudentClass model)
+        {
+            List<string> errors = new List<string>();
+            bool success = true;
+            try
+            {
+                if(ModelState.IsValid)
+                {
+                    Context.Classes.Add(new Class
+                    {
+                        ClassName = model.ClassName
+                    });
+                    var result = Context.SaveChanges();
+                    if (result <= 0)
+                    {
+                        success = false;
+                        errors.Add("An error occured while adding data to database");
+
+                    }
+                }
+                else
+                {
+                    success = false;
+                    errors.Add("Please fill required fields!");
+                }
+            }
+            catch (Exception ex)
+            {
+                success = false;
+                errors.Add(ex.ToString());
+            }
+            if(success && errors.Count == 0)
+            {
+                return RedirectToAction("ClassAdministration");
+            }
+            else
+            {
+                string error = errors.Aggregate((current, next) => current + "\n" + next);
+                ViewBag.Message = error;
+                return View("ClassAdministration", model);
+            }
+        }
+        #endregion
+
+
+        #region Profile
+        public async Task<ActionResult> AdminProfile()
+        {
+            CommonAppUser commonAppUser =
+                await UserManager.FindByIdAsync(
+                            User.Identity.GetUserId<string>()
+                        );
+
+            return View(new AdminProfile
+            {
+                Email = commonAppUser.Email
+            });
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> AdminProfile(AdminProfile model)
+        {
+            List<string> errors = new List<string>();
+            bool success = true;
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    CommonAppUser commonAppUser =
+                                    await UserManager.FindByIdAsync(
+                                                User.Identity.GetUserId<string>()
+                                            );
+                
+                    commonAppUser.Email = model.Email;
+                    var updateResult = await UserManager.UpdateAsync(commonAppUser);
+
+                    if (updateResult.Succeeded)
+                    {
+                        if (!string.IsNullOrEmpty(model.NewPassword) &&
+                            !string.IsNullOrEmpty(model.CurrentPassword))
+                        {
+                            updateResult = await UserManager.ChangePasswordAsync(commonAppUser.Id,
+                                    model.CurrentPassword, model.NewPassword
+                                );
+                            if (!updateResult.Succeeded)
+                            {
+                                success = false;
+                                errors.Add("Error while changing user password");
+                            }
+                            else
+                            {
+
+                                ViewBag.Message = "Profile has been saved successfully";
+                            }
+                        }
+                        else
+                        {
+                            ViewBag.Message = "Profile has been saved successfully";
+                        }
+                    }
+                    else
+                    {
+                        success = false;
+                        errors.Add("Error while updating the profile");
+                        errors.AddRange(updateResult.Errors);
+                    }
+                }
+                else
+                {
+                    success = false;
+                    errors.Add("Please complete all fields");
+                }
+            }
+            catch (Exception ex)
+            {
+                success = false;
+                errors.Add(ex.ToString());
+            }
+            model.CurrentPassword = "";
+            model.NewPassword = "";
+            if (success && errors.Count == 0)
+            {
+                return View(model);
+            }
+            else
+            {
+                foreach (string error in errors)
+                {
+                    ModelState.AddModelError("", error);
+                }
+                return View(model);
+            }
         }
         #endregion
 

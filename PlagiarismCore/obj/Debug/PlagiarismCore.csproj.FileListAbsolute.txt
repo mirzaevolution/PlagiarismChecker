@@ -141,3 +141,11 @@ D:\Programming\PlagiarismChecker\PlagiarismCore\bin\Microsoft.AI.Web.xml
 D:\Programming\PlagiarismChecker\PlagiarismCore\bin\itextsharp.xml
 D:\Programming\PlagiarismChecker\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.InitialLoad.resources
 D:\Programming\PlagiarismChecker\PlagiarismCore\obj\Debug\PlagiarismCore.csproj.GenerateResource.Cache
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.InitialLoad.resources
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\PlagiarismCore\obj\Debug\PlagiarismCore.csproj.GenerateResource.Cache
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.AddSubmissionDate.resources
+D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.AddTwoFields.resources
+D:\Programming\PlagiarismChecker\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.AddSubmissionDate.resources
+D:\Programming\PlagiarismChecker\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.AddTwoFields.resources
+D:\Programming\PlagiarismChecker\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.AddSubmittedAssignmentReferenceToClass.resources
+D:\Programming\PlagiarismChecker\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.AddNoteColumnToSubmittedAssignment.resources

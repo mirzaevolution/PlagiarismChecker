@@ -1,7 +1,99 @@
-﻿
+﻿@using PlagiarismCore.Models.IdentityModels
+@model StudentClass
 @{
-    ViewBag.Title = "ClassAdministration";
+	ViewBag.Title = "Classes Administration";
 }
 
-<h2>ClassAdministration</h2>
+<h3 class="text-primary"><span class="fa fa-graduation-cap"></span> Classes Administration</h3>
 
+@Html.Hidden("Message", (string)ViewBag.Message)
+<form class="mt-5" method="post" action="@Url.Action("PostNewClass","ManageAdmin")">
+	@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+	<div class="form-group">
+		@Html.AntiForgeryToken()
+		@Html.LabelFor(x => x.ClassName)
+		@Html.EditorFor(x => x.ClassName, new { htmlAttributes = new { @class = "form-control" } })
+		@Html.ValidationMessageFor(x => x.ClassName)
+	</div>
+	<button class="btn btn-success" type="submit"><span class="fa fa-plus"></span> Add New Class</button>
+</form>
+<br />
+<div>
+	<table id="ClassTable" class="table display" style="width:100%;">
+		<thead class="bg-primary text-light">
+			<tr>
+				<th>Class Name</th>
+				<th>Total Students</th>
+				<th></th>
+			</tr>
+
+		</thead>
+
+	</table>
+
+</div>
+<br />
+<div class="modal fade" id="ModalEditClass">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Edit Class</h4>
+				<a href="#" class="close" data-dismiss="modal">&times;</a>
+			</div>
+			<div class="modal-body">
+				<div>
+					<div class="form-group">
+						<input type="hidden" id="ClassIdHidden" />
+						<label for="ClassNameEdit">Class Name</label>
+						<input type="text" id="ClassNameEdit" class="form-control" />
+					</div>
+					<br />
+
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" onclick="Buttons.SaveEdit()" class="btn btn-primary" id="ButtonSaveEditClass">Save</button>
+				<button type="button" onclick="Buttons.RemoveClass()" class="btn btn-danger">Delete</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal  fade" id="ModalShowStudents">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">All Related Students</h4>
+				<a href="#" class="close" data-dismiss="modal">&times;</a>
+			</div>
+			<div class="modal-body">
+				<div>
+					<table id="StudentRelatedTable" class="table display nowrap" style="width:100%;">
+						<thead class="bg-primary text-light">
+							<tr>
+								<th>Full Name</th>
+								<th>Email</th>
+								<th>Student ID</th>
+							</tr>
+
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="3">
+									<p class="lead text-center text-primary">Loading...</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section scripts{
+	<script src="~/Scripts/PlagiarismChecker/ManageAdmin/ClassAdministration.js"></script>
+}

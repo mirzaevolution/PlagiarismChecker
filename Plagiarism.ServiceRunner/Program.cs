@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Plagiarism.ServiceRunner.Service;
 
 namespace Plagiarism.ServiceRunner
 {
@@ -10,6 +6,8 @@ namespace Plagiarism.ServiceRunner
     {
         static void Main(string[] args)
         {
+            //CrawlerSingleton.GetEngine().Run();
+            CrawlerService.ExecuteService();
         }
     }
 }

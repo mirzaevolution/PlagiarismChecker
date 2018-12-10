@@ -6,7 +6,7 @@ using System.Web;
 
 namespace PlagiarismCore.Models.IdentityModels
 {
-    public class EditStudentModel
+    public class StudentModel
     {
         public string ID { get; set; }
 

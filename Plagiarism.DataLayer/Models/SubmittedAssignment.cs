@@ -9,6 +9,7 @@ namespace Plagiarism.DataLayer.Models
     public class SubmittedAssignment
     {
         public Guid Id { get; set; } = Guid.NewGuid();
+        public string Title { get; set; }
         public int Counter { get; set; }
         public string UploadedFilePath { get; set; }
         public int PercentageInteger { get; set; }
@@ -17,7 +18,11 @@ namespace Plagiarism.DataLayer.Models
         public bool IsAccepted { get; set; }
         public bool IsChecked { get; set; } = false;
         public string Data { get; set; }
+        public short Score { get; set; }
+        public DateTime SubmissionDate { get; set; }
+        public string Note { get; set; }
         public virtual Assignment Assignment { get; set; }
+        public virtual Class Class { get; set; }
         public virtual ICollection<CommonAppUser> CommonAppUsers { get; set; }
     }
 }
