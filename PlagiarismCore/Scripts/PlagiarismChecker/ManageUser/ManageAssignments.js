@@ -18,9 +18,9 @@
                 { data: "Description" },
                 { data: "PercentageInteger" },
                 { data: "Status" },
-
                 { data: "Score" },
                 { data: "ScoreStatus" },
+                { data: "Note" },
                 {
                     data: "UploadedFilePath",
                     render: function (data, type, row) {
@@ -38,9 +38,17 @@
                             data = moment(data).format('LLL');
                         return data;
                     }
-                }
+                },
 
             ],
+            columnDefs: [
+                    {
+                        render: function (data, type, full, meta) {
+                            return "<div class='text-wrap width-250'>" + data + "</div>";
+                        },
+                        targets: 8
+                    }
+                ],
             scrollX: true,
             info: false,
             paging: true

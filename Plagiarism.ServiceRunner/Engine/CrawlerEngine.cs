@@ -21,17 +21,23 @@ namespace Plagiarism.ServiceRunner.Engine
             {
                 Console.WriteLine("Crawling all data....");
                 List<Assignment> allAssignments = _context.Assignments.Include(x => x.SubmittedAssignments).ToList();
+                List<Class> allClasses = _context.Classes.Include(x => x.SubmittedAssignments).ToList();
                 foreach (Assignment assignment in allAssignments)
                 {
-                    foreach (SubmittedAssignment submittedAssignment in assignment
+                    var groupedData = assignment
                         .SubmittedAssignments
-                        .Where(x=>!x.IsChecked)
+                        
                         .OrderBy(x => x.Counter)
-                        .ToList())
+                        .GroupBy(x => x.Class.ClassName)
+                        .SelectMany(x=>x.Select(y=>y))
+                        .Where(x => !x.IsChecked)
+                        .ToList();
+                    foreach (SubmittedAssignment submittedAssignment in groupedData)
                     {
                         SecondaryCrawler(submittedAssignment);
                     }
                 }
+               
                 
             }
             catch (Exception ex)
@@ -48,11 +54,17 @@ namespace Plagiarism.ServiceRunner.Engine
             try
             {
                 int max = submittedAssignment.Counter;
-                Assignment assignment = _context.Assignments.FirstOrDefault(x => x.Id == submittedAssignment.Assignment.Id);
+                Assignment assignment = _context
+                    .Assignments
+                    .FirstOrDefault(x => x.Id == submittedAssignment.Assignment.Id);
                 if(assignment!=null)
                 {
-                    List<SubmittedAssignment> allSubmittedAssignment = assignment.SubmittedAssignments.OrderBy(x => x.Counter)
-                        .Where(x => (x.Counter < max) && (x.IsAccepted)).ToList();
+                    List<SubmittedAssignment> allSubmittedAssignment = assignment
+                        .SubmittedAssignments.OrderBy(x => x.Counter)
+                        .GroupBy(x => x.Class.ClassName)
+                        .SelectMany(x => x.Select(y => y))
+                        .Where(x => (x.Counter < max) && (x.IsAccepted) && x.Class.Id==submittedAssignment.Class.Id)
+                        .ToList();
                     TextProcessing textProcessing = new TextProcessing(BaseWords.GetBaseWords());
                     PlagiarismChecker checker = new PlagiarismChecker();
                     int len = allSubmittedAssignment.Count;
@@ -71,7 +83,12 @@ namespace Plagiarism.ServiceRunner.Engine
                             submittedAssignment.PercentageInteger = plagiarismResult.PercentageInteger;
                             submittedAssignment.IsAccepted = (plagiarismResult.PercentageInteger > 70) ? false : true;
                             if (!submittedAssignment.IsAccepted)
+                            {
+                                var comparerOwner = comparer.CommonAppUsers.FirstOrDefault();
+                                submittedAssignment.Note =
+                                    $"Detected as 'Plagiarism' when compared to {(comparerOwner == null ? "Unknown" : comparerOwner.FullName)}'s task with title '{comparer.Title}'";
                                 break;
+                            }
                         }
 
                         catch (Exception ex)

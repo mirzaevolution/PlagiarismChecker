@@ -4,18 +4,23 @@
     },
     LoadAssignments: function () {
 
-        var url = "/CoreAPI/GetAllAssignments";
+        var url = "/CoreAPI/GetAssignments";
+        var id = $("#StudentId").val();
         $.ajax({
             url: url,
+            data:{
+                id: id,
+                except:false
+            },
             beforeSend: function () {
                 console.log(".....Requesting data from " + url);
             },
             success: function (response) {
                 console.log(".....Data successfully retrieved from " + url);
                 $("#AssignmentId").empty();
-                if (response.data.length > 0) {
+                if (response.length > 0) {
 
-                    $.each(response.data, (index, value) => {
+                    $.each(response, (index, value) => {
                         $("#AssignmentId").append("<option value='" + value.Id + "'>" + value.AssignmentName+ "</option>");
                     });
 

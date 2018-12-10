@@ -145,3 +145,7 @@ D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\PlagiarismCore\obj\De
 D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\PlagiarismCore\obj\Debug\PlagiarismCore.csproj.GenerateResource.Cache
 D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.AddSubmissionDate.resources
 D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.AddTwoFields.resources
+D:\Programming\PlagiarismChecker\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.AddSubmissionDate.resources
+D:\Programming\PlagiarismChecker\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.AddTwoFields.resources
+D:\Programming\PlagiarismChecker\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.AddSubmittedAssignmentReferenceToClass.resources
+D:\Programming\PlagiarismChecker\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.AddNoteColumnToSubmittedAssignment.resources

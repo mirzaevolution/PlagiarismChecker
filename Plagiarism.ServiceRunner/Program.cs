@@ -6,6 +6,7 @@ namespace Plagiarism.ServiceRunner
     {
         static void Main(string[] args)
         {
+            //CrawlerSingleton.GetEngine().Run();
             CrawlerService.ExecuteService();
         }
     }

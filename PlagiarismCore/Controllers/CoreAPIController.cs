@@ -13,7 +13,7 @@ using Plagiarism.DataLayer.Models;
 using System.Web.Mvc;
 using System.Threading.Tasks;
 using PlagiarismCore.Models.IdentityModels;
-
+using System.Diagnostics;
 
 namespace PlagiarismCore.Controllers
 {
@@ -103,7 +103,7 @@ namespace PlagiarismCore.Controllers
                 }).ToList();
             return Json(new { data = students }, JsonRequestBehavior.AllowGet);
         }
-        public JsonResult GetAssignments(string id)
+        public JsonResult GetAssignments(string id, bool except=true)
         {
             var role = RoleManager.FindByName("Student");
             CommonAppUser user = UserManager
@@ -117,6 +117,10 @@ namespace PlagiarismCore.Controllers
                     x.Id,
                     x.AssignmentName
                 }).ToList();
+            if (!except)
+            {
+                return Json(userAssignments, JsonRequestBehavior.AllowGet);
+            }
             var assignments = Context.Assignments.Select(x => new
             {
                 x.Id,
@@ -167,7 +171,8 @@ namespace PlagiarismCore.Controllers
                     x.Score,
                     ScoreStatus = x.Score == 0 ? "Waiting" : "Done",
                     x.Counter,
-                    IsChecked= x.IsChecked? "Checked":"In Review"
+                    IsChecked= x.IsChecked? "Checked":"In Review",
+                    Note = x.Note
                 })
                 .ToList();
 
@@ -191,32 +196,43 @@ namespace PlagiarismCore.Controllers
         {
             List<SubmittedAssignmentList> list = new List<SubmittedAssignmentList>();
             var role = RoleManager.FindByName("Student");
-            foreach (var submittedAssignment in Context.SubmittedAssignments.ToList())
+            try
             {
-                SubmittedAssignmentList item = new SubmittedAssignmentList
+                foreach (var submittedAssignment in Context.SubmittedAssignments.ToList())
                 {
-                    SubjectName = submittedAssignment.Assignment == null ?
-                                   "Undefined" : submittedAssignment.Assignment.AssignmentName,
-                    Title = submittedAssignment.Title,
-                    Counter = submittedAssignment.Counter,
-                    UploadedFilePath = submittedAssignment.UploadedFilePath.Replace("~", ""),
-                    PercentageInteger = submittedAssignment.PercentageInteger,
-                    Description = submittedAssignment.Description,
-                    Status = GetStatus(submittedAssignment.IsAccepted, submittedAssignment.IsChecked),
-                    Score = submittedAssignment.Score,
-                    ScoreStatus = submittedAssignment.Score==0? "Waiting":"Done",
-                    IsChecked = submittedAssignment.IsChecked?"Checked":"Not yet",
-                    SubmissionDate = submittedAssignment.SubmissionDate
-                };
-                foreach(var student in submittedAssignment
-                    .CommonAppUsers
-                    .Where(x => x.Roles.Any(y => y.RoleId == role.Id))
-                    .ToList())
-                {
-                    item.StudentName = student.FullName;
-                    item.StudentClass = student.Class?.ClassName;
-                    list.Add(item);
+                    SubmittedAssignmentList item = new SubmittedAssignmentList
+                    {
+
+                        SubjectName = submittedAssignment.Assignment == null ?
+                                       "Undefined" : submittedAssignment.Assignment.AssignmentName,
+                        Title = submittedAssignment.Title,
+                        Counter = submittedAssignment.Counter,
+                        UploadedFilePath = submittedAssignment.UploadedFilePath.Replace("~", ""),
+                        PercentageInteger = submittedAssignment.PercentageInteger,
+                        Description = submittedAssignment.Description,
+                        Status = GetStatus(submittedAssignment.IsAccepted, submittedAssignment.IsChecked),
+                        Score = submittedAssignment.Score,
+                        ScoreStatus = submittedAssignment.Score == 0 ? "Waiting" : "Done",
+                        IsChecked = submittedAssignment.IsChecked ? "Checked" : "Not yet",
+                        SubmissionDate = submittedAssignment.SubmissionDate,
+                        Note = submittedAssignment.Note
+                    };
+                    foreach (var student in submittedAssignment
+                        .CommonAppUsers
+                        .Where(x => x.Roles.Any(y => y.RoleId == role.Id))
+                        .ToList())
+                    {
+                        item.StudentId = student.Id;
+                        item.StudentName = student.FullName;
+                        item.StudentClass = student.Class?.ClassName;
+                        list.Add(item);
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                list.Clear();
+                Trace.WriteLine(ex);
             }
             return Json(new { data = list },JsonRequestBehavior.AllowGet);
         }

@@ -20,7 +20,9 @@ namespace Plagiarism.DataLayer.Models
         public string Data { get; set; }
         public short Score { get; set; }
         public DateTime SubmissionDate { get; set; }
+        public string Note { get; set; }
         public virtual Assignment Assignment { get; set; }
+        public virtual Class Class { get; set; }
         public virtual ICollection<CommonAppUser> CommonAppUsers { get; set; }
     }
 }

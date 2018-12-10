@@ -8,6 +8,7 @@ namespace PlagiarismCore.Models.IdentityModels
 {
     public class SubmissionModel
     {
+        public string StudentId { get; set; }
         [Required]
         public string AssignmentId { get; set; }
         public string Title { get; set; }

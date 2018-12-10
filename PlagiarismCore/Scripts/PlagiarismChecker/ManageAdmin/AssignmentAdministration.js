@@ -38,7 +38,16 @@
         $("#SubmittedAssignmentTable").DataTable({
             ajax: url,
             columns: [
-                { data: "StudentName" },
+                { 
+                    data: "StudentName",
+                    render: function (data, type, row) {
+                        if (type === 'display') {
+                            var link = "/ManageAdmin/StudentDetail/" + row.StudentId;
+                            data = "<a href='" + link + "' target='_blank'>" + data + "</a>";
+                        }
+                        return data;
+                    }
+                },
                 { data: "StudentClass" },
                 { data: "SubjectName" },
                 { data: "Title" },
@@ -56,6 +65,7 @@
                 { data: "Status" },
                 { data: "Score" },
                 { data: "ScoreStatus" },
+                { data: "Note" },
                 {
                     data: "SubmissionDate",
                     render: function (data, type) {
@@ -64,8 +74,16 @@
                         return data;
                     }
                 },
-                { data: "IsChecked" },
+                { data: "IsChecked" }
 
+            ],
+            columnDefs: [
+                 {
+                     render: function (data, type, full, meta) {
+                         return "<div class='text-wrap width-250'>" + data + "</div>";
+                     },
+                     targets: 11
+                 }
             ],
             info: false,
             paging: true,
@@ -82,7 +100,7 @@ let Page = {
     CheckMessage: function () {
         var message = $("#Message").val();
         if (message && message !== "") {
-            alert(message);
+            MessageBox.Show(message);
         }
     },
     AssignmentTable: function () {
@@ -120,7 +138,7 @@ let Buttons = {
         var assignmentId = $("#AssignmentIdHidden").val();
 
         if (assignmentNameEdit.trim() === '') {
-            alert('Assignment name cannot be empty');
+            MessageBox.Show('Assignment name cannot be empty');
         } else {
 
             $.ajax({
@@ -138,15 +156,15 @@ let Buttons = {
                     $("#ModalEditAssignment").modal("hide");
                     Ajax.LoadAssignments();
                     if (response.Success) {
-                        alert("Data has been updated successfully");
+                        MessageBox.Show("Data has been updated successfully");
                     } else {
-                        alert("An error occured when updating data");
+                        MessageBox.Show("An error occured when updating data");
                         console.log(response.Errors);
                     }
 
                 },
                 error: function () {
-                    alert("An error occured while updating data in the server");
+                    MessageBox.Show("An error occured while updating data in the server");
                 }
             })
         }
@@ -172,15 +190,15 @@ let Buttons = {
                 $("#ModalEditAssignment").modal("hide");
                 Ajax.LoadAssignments();
                 if (response.Success) {
-                    alert("Data has been removed successfully");
+                    MessageBox.Show("Data has been removed successfully");
                 } else {
-                    alert("An error occured when removing data");
+                    MessageBox.Show("An error occured when removing data");
                     console.log(response.Errors);
                 }
 
             },
             error: function () {
-                alert("An error occured while removing data in the server");
+                MessageBox.Show("An error occured while removing data in the server");
             }
         })
 

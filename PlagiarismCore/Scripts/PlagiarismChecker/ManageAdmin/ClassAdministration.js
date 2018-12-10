@@ -59,7 +59,7 @@ let Buttons = {
         var classId = $("#ClassIdHidden").val();
 
         if (classNameEdit.trim() === '') {
-            alert('Class name cannot be empty');
+            MessageBox.Show('Class name cannot be empty');
         } else {
 
             $.ajax({
@@ -73,15 +73,15 @@ let Buttons = {
                     $("#ModalEditClass").modal("hide");
                     Ajax.LoadClasses();
                     if (response.Success) {
-                        alert("Class has been updated successfully");
+                        MessageBox.Show("Class has been updated successfully");
                     } else {
-                        alert("An error occured when updating class");
+                        MessageBox.Show("An error occured when updating class");
                         console.log(response.Errors);
                     }
 
                 },
                 error: function () {
-                    alert("An error occured while updating class in the server");
+                    MessageBox.Show("An error occured while updating class in the server");
                 }
             })
         }
@@ -107,14 +107,14 @@ let Buttons = {
                 $("#ModalEditClass").modal("hide");
                 Ajax.LoadClasses();
                 if (response.Success) {
-                    alert("Class has been removed successfully");
+                    MessageBox.Show("Class has been removed successfully");
                 } else {
-                    alert("An error occured when removing class");
+                    MessageBox.Show("An error occured when removing class");
                     console.log(response.Errors);
                 }
             },
             error: function () {
-                alert("An error occured while removing class in the server");
+                MessageBox.Show("An error occured while removing class in the server");
             }
         })
 
@@ -134,7 +134,7 @@ let Page = {
     CheckMessage: function () {
         var message = $("#Message").val();
         if (message && message !== "") {
-            alert(message);
+            MessageBox.Show(message);
         }
     }
  

@@ -5,7 +5,7 @@
     CheckMessage: function () {
         var message = $("#Message").val();
         if (message && message !== "") {
-            alert(message);
+            MessageBox.Show(message);
         }
     }
 }

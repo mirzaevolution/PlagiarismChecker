@@ -4,8 +4,6 @@
 	ViewBag.Title = "Submit Assignment";
 }
 
-
-
 <div class="p-3">
 	<h4 class="text-primary"><span class="fa fa-sticky-note"></span> Submit Assignment</h4>
 	<p class="text-danger"><span class="fa fa-exclamation-triangle"></span> WARNING: Cheating is prohibited. Make sure you submit your own assingment.</p>
@@ -15,7 +13,7 @@
 		<div>
 			<hr />
 			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
+			@Html.HiddenFor(x=>x.StudentId)
 
 			<div class="form-group">
 				@Html.LabelFor(model => model.Title)
@@ -30,7 +28,7 @@
 			</div>
 			<div class="form-group">
 				<label for="AssignmentFile">Upload File</label>
-				<input type="file" name="AssignmentFile" id="AssignmentFile" class="form-control"/>
+				<input type="file" accept=".pdf" name="AssignmentFile" id="AssignmentFile" class="form-control"/>
 			</div>
 			<br /><br />
 

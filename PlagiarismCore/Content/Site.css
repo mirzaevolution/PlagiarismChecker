@@ -26,3 +26,10 @@ textarea {
     src: url('/Content/Fonts/Robotronics/Robotronics Italic.ttf')
 }
 
+.text-wrap {
+    white-space: normal;
+}
+
+.width-250 {
+    width: 250px;
+}

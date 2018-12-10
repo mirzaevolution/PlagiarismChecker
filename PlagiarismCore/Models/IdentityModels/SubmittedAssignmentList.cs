@@ -7,6 +7,7 @@ namespace PlagiarismCore.Models.IdentityModels
 {
     public class SubmittedAssignmentList
     {
+        public string StudentId { get; set; }
         public string StudentName { get; set; }
         public string StudentClass { get; set; }
         public string SubjectName { get; set; }
@@ -20,6 +21,7 @@ namespace PlagiarismCore.Models.IdentityModels
         public string ScoreStatus { get; set; }
         public DateTime SubmissionDate { get; set; }
         public string Status { get; set; }
+        public string Note { get; set; }
 
     }
 }

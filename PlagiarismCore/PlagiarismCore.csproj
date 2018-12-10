@@ -201,6 +201,14 @@
     <Compile Include="Migrations\201812080804407_AddTwoFields.Designer.cs">
       <DependentUpon>201812080804407_AddTwoFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812100443418_AddSubmittedAssignmentReferenceToClass.cs" />
+    <Compile Include="Migrations\201812100443418_AddSubmittedAssignmentReferenceToClass.Designer.cs">
+      <DependentUpon>201812100443418_AddSubmittedAssignmentReferenceToClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812100700024_AddNoteColumnToSubmittedAssignment.cs" />
+    <Compile Include="Migrations\201812100700024_AddNoteColumnToSubmittedAssignment.Designer.cs">
+      <DependentUpon>201812100700024_AddNoteColumnToSubmittedAssignment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Exceptions\CustomException.cs" />
     <Compile Include="Models\Exceptions\ErrorModel.cs" />
@@ -520,6 +528,7 @@
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\PlagiarismChecker\Global.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\AddNewStudent.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\AdminProfile.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\ClassAdministration.js" />
@@ -578,8 +587,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\CoreAPI\" />
-    <Folder Include="Views\ManageAccount\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -609,6 +616,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812080804407_AddTwoFields.resx">
       <DependentUpon>201812080804407_AddTwoFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812100443418_AddSubmittedAssignmentReferenceToClass.resx">
+      <DependentUpon>201812100443418_AddSubmittedAssignmentReferenceToClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812100700024_AddNoteColumnToSubmittedAssignment.resx">
+      <DependentUpon>201812100700024_AddNoteColumnToSubmittedAssignment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -50,7 +50,11 @@ namespace PlagiarismCore.Controllers
 
         public ActionResult AddSubmission()
         {
-            return View();
+            SubmissionModel model = new SubmissionModel
+            {
+                StudentId = SignInManager.AuthenticationManager.User.Identity.GetUserId<string>()
+            };
+            return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -79,10 +83,15 @@ namespace PlagiarismCore.Controllers
                             {
                                 data = PDFReader.ExtractTextFromPdf(stream);
                             }
-                            
+                            CommonAppUser commonAppUser =
+                                  await UserManager.FindByIdAsync(
+                                              model.StudentId
+                                          );
                             model.Data = data;
                             int? latestCounter =
-                                Context.SubmittedAssignments.Where(x => x.Assignment.Id == assignment.Id)
+                                Context.SubmittedAssignments
+                                .Where(x => 
+                                     (x.Assignment.Id == assignment.Id) && x.Class.Id==commonAppUser.Class.Id)
                                 .OrderBy(x => x.Counter)
                                 .Select(x=>x.Counter)
                                 .ToList()
@@ -92,10 +101,7 @@ namespace PlagiarismCore.Controllers
                                 model.Rank = latestCounter.Value + 1;
                                 
                                 model.UploadedTime = DateTime.Now;
-                                CommonAppUser commonAppUser =
-                                    await UserManager.FindByIdAsync(
-                                                User.Identity.GetUserId<string>()
-                                            );
+                              
                                 var submit = new SubmittedAssignment
                                 {
                                     Assignment = assignment,
@@ -103,7 +109,8 @@ namespace PlagiarismCore.Controllers
                                     Data = model.Data,
                                     SubmissionDate = model.UploadedTime,
                                     UploadedFilePath = model.UploadedFilePath,
-                                    Title = model.Title
+                                    Title = model.Title,
+                                    Class = commonAppUser.Class
                                 };
                                 if (model.Rank == 1 || latestCounter.Value == 0)
                                 {

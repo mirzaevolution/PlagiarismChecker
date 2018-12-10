@@ -85,7 +85,7 @@
                 },
                 { data: "Score" },
                 { data: "ScoreStatus" },
-
+                { data: "Note"},
                 {
                     data: "Id",
                     render: function (data, type, row) {
@@ -96,6 +96,14 @@
                     }
                 }
 
+            ],
+            columnDefs: [
+                    {
+                        render: function (data, type, full, meta) {
+                            return "<div class='text-wrap width-250'>" + data + "</div>";
+                        },
+                        targets: 9
+                    }
             ],
             scrollX: true,
             info: false,
@@ -112,7 +120,7 @@ let Page = {
     CheckMessage: function () {
         var message = $("#Message").val();
         if (message && message !== "") {
-            alert(message);
+            MessageBox.Show(message);
         }
     },
     AssignmentTable: function () {
@@ -168,15 +176,15 @@ let Buttons = {
                         Ajax.LoadAssignments();
                         Page.AssignmentTable();
 
-                        alert("Assignment has been added to student list");
+                        MessageBox.Show("Assignment has been added to student list");
                     } else {
                         console.log(response.Errors);
-                        alert("An error occured while adding assignment to list");
+                        MessageBox.Show("An error occured while adding assignment to list");
                     }
                 },
                 error: function () {
                     $("#ButtonAddNewAssignment").prop("disabled", true);
-                    alert("An error occured while posting data to server");
+                    MessageBox.Show("An error occured while posting data to server");
                 }
             })
         });
@@ -203,15 +211,15 @@ let Buttons = {
 
                     Page.AssignmentTable();
                     
-                    alert("Assignment has been removed from student list");
+                    MessageBox.Show("Assignment has been removed from student list");
                 } else {
                     console.log(response.Errors);
-                    alert("An error occured while removing assignment from the list");
+                    MessageBox.Show("An error occured while removing assignment from the list");
                 }
             },
             error: function () {
                 $("#ButtonAddNewAssignment").prop("disabled", true);
-                alert("An error occured while removing data in the server");
+                MessageBox.Show("An error occured while removing data in the server");
             }
         })
     },
@@ -220,7 +228,7 @@ let Buttons = {
         var assignmentId = $("#AssignmentIdHidden").val();
 
         if (AssignmentScoreEdit.trim() === '') {
-            alert('Score cannot be empty');
+            MessageBox.Show('Score cannot be empty');
         } else {
 
             $.ajax({
@@ -234,15 +242,15 @@ let Buttons = {
                     $("#ModalEditScore").modal("hide");
                     Ajax.LoadSubmittedAssignment();
                     if (response.Success) {
-                        alert("Score has been updated successfully");
+                        MessageBox.Show("Score has been updated successfully");
                     } else {
-                        alert("An error occured when updating score");
+                        MessageBox.Show("An error occured when updating score");
                         console.log(response.Errors);
                     }
 
                 },
                 error: function () {
-                    alert("An error occured while updating data in the server");
+                    MessageBox.Show("An error occured while updating data in the server");
                 }
             })
         }
