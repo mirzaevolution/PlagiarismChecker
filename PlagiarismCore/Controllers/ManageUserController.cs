@@ -66,86 +66,100 @@ namespace PlagiarismCore.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    if(Request.Files.Count>0)
+                    CommonAppUser commonAppUser =
+                                   await UserManager.FindByIdAsync(
+                                               model.StudentId
+                                           );
+                    var submittedAssignment = commonAppUser.SubmittedAssignments.
+                        FirstOrDefault(x => x.Title.Equals(model.Title, StringComparison.InvariantCultureIgnoreCase) 
+                        && x.Assignment.Id.ToString().Equals(model.AssignmentId));
+                    if (submittedAssignment != null)
                     {
-                        Assignment assignment = Context.Assignments.FirstOrDefault(x => x.Id.ToString() == model.AssignmentId);
-                        if (assignment != null)
+                        success = false;
+                        errors.Add("You cannot add same assignment with the same subject!");
+                    }
+                    else
+                    {
+                        if (Request.Files.Count > 0)
                         {
-                            HttpPostedFileBase uploadedFile = Request.Files["AssignmentFile"];
-                            string randomFileName = Path.GetFileName(uploadedFile.FileName) + "_"
-                                + DateTime.Now.Ticks.ToString() + Path.GetExtension(uploadedFile.FileName);
-                            string relativePath = "~/Upload/" + randomFileName;
-                            string path = Path.Combine(Server.MapPath("~/Upload"), randomFileName);
-                            uploadedFile.SaveAs(path);
-                            model.UploadedFilePath = relativePath;
-                            string data;
-                            using (Stream stream = new FileStream(path,FileMode.Open,FileAccess.Read,FileShare.Read))
+                            Assignment assignment = Context.Assignments.FirstOrDefault(x => x.Id.ToString() == model.AssignmentId);
+                            if (assignment != null)
                             {
-                                data = PDFReader.ExtractTextFromPdf(stream);
-                            }
-                            CommonAppUser commonAppUser =
-                                  await UserManager.FindByIdAsync(
-                                              model.StudentId
-                                          );
-                            model.Data = data;
-                            int? latestCounter =
-                                Context.SubmittedAssignments
-                                .Where(x => 
-                                     (x.Assignment.Id == assignment.Id) && x.Class.Id==commonAppUser.Class.Id)
-                                .OrderBy(x => x.Counter)
-                                .Select(x=>x.Counter)
-                                .ToList()
-                                .LastOrDefault();
-                            if (latestCounter!=null)
-                            {
-                                model.Rank = latestCounter.Value + 1;
-                                
-                                model.UploadedTime = DateTime.Now;
-                              
-                                var submit = new SubmittedAssignment
+                                HttpPostedFileBase uploadedFile = Request.Files["AssignmentFile"];
+                                string randomFileName = Path.GetFileName(uploadedFile.FileName) + "_"
+                                    + DateTime.Now.Ticks.ToString() + Path.GetExtension(uploadedFile.FileName);
+                                string relativePath = "~/Upload/" + randomFileName;
+                                string path = Path.Combine(Server.MapPath("~/Upload"), randomFileName);
+                                uploadedFile.SaveAs(path);
+                                model.UploadedFilePath = relativePath;
+                                string data;
+                                using (Stream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
                                 {
-                                    Assignment = assignment,
-                                    Counter = model.Rank,
-                                    Data = model.Data,
-                                    SubmissionDate = model.UploadedTime,
-                                    UploadedFilePath = model.UploadedFilePath,
-                                    Title = model.Title,
-                                    Class = commonAppUser.Class
-                                };
-                                if (model.Rank == 1 || latestCounter.Value == 0)
-                                {
-                                    submit.Description = "First Submission";
-                                    submit.IsAccepted = true;
-                                    submit.IsChecked = true;
+                                    data = PDFReader.ExtractTextFromPdf(stream);
                                 }
-                                commonAppUser.SubmittedAssignments.Add(submit);
-                                    
-                                var result = await UserManager.UpdateAsync(commonAppUser);
-                                if(!result.Succeeded)
+
+                                model.Data = data;
+                                int? latestCounter =
+                                    Context.SubmittedAssignments
+                                    .Where(x =>
+                                         (x.Assignment.Id == assignment.Id) && x.Class.Id == commonAppUser.Class.Id)
+                                    .OrderBy(x => x.Counter)
+                                    .Select(x => x.Counter)
+                                    .ToList()
+                                    .LastOrDefault();
+                                if (latestCounter != null)
                                 {
-                                    errors.AddRange(result.Errors);
+                                    model.Rank = latestCounter.Value + 1;
+
+                                    model.UploadedTime = DateTime.Now;
+
+                                    var submit = new SubmittedAssignment
+                                    {
+                                        Assignment = assignment,
+                                        Counter = model.Rank,
+                                        Data = model.Data,
+                                        SubmissionDate = model.UploadedTime,
+                                        UploadedFilePath = model.UploadedFilePath,
+                                        Title = model.Title,
+                                        Class = commonAppUser.Class
+                                    };
+                                    if (model.Rank == 1 || latestCounter.Value == 0)
+                                    {
+                                        submit.Description = "First Submission";
+                                        submit.IsAccepted = true;
+                                        submit.IsChecked = true;
+                                    }
+                                    commonAppUser.SubmittedAssignments.Add(submit);
+
+                                    var result = await UserManager.UpdateAsync(commonAppUser);
+                                    if (!result.Succeeded)
+                                    {
+                                        errors.AddRange(result.Errors);
+                                    }
+                                }
+                                else
+                                {
+                                    success = false;
+                                    errors.Add("Cannot retrieve latest submitted rank from database");
                                 }
                             }
                             else
                             {
                                 success = false;
-                                errors.Add("Cannot retrieve latest submitted rank from database");
+                                errors.Add("Assignment selected is not found");
                             }
+
+
                         }
                         else
                         {
                             success = false;
-                            errors.Add("Assignment selected is not found");
+                            errors.Add("Please upload required document");
                         }
-                      
-                        
+
                     }
-                    else
-                    {
-                        success = false;
-                        errors.Add("Please upload required document");
-                    }
-                    
+
+
                 }
                 else
                 {

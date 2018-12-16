@@ -55,6 +55,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="EPPlus, Version=4.5.2.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.2.1\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -86,9 +89,11 @@
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -183,6 +188,7 @@
     <Compile Include="Controllers\CoreAPIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageAdminController.cs" />
+    <Compile Include="Controllers\ManageTeacherController.cs" />
     <Compile Include="Controllers\ManageUserController.cs" />
     <Compile Include="Extensions\GlobalErrorHandlerAttribute.cs" />
     <Compile Include="Extensions\IdentityHtmlHelpers.cs" />
@@ -209,6 +215,10 @@
     <Compile Include="Migrations\201812100700024_AddNoteColumnToSubmittedAssignment.Designer.cs">
       <DependentUpon>201812100700024_AddNoteColumnToSubmittedAssignment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812151228487_AddTeacherRelationship.cs" />
+    <Compile Include="Migrations\201812151228487_AddTeacherRelationship.Designer.cs">
+      <DependentUpon>201812151228487_AddTeacherRelationship.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Exceptions\CustomException.cs" />
     <Compile Include="Models\Exceptions\ErrorModel.cs" />
@@ -218,9 +228,12 @@
     <Compile Include="Models\IdentityModels\LoginModel.cs" />
     <Compile Include="Models\IdentityModels\NewStudentModel.cs" />
     <Compile Include="Models\IdentityModels\StudentClass.cs" />
+    <Compile Include="Models\IdentityModels\StudentImportModel.cs" />
     <Compile Include="Models\IdentityModels\StudentProfile.cs" />
     <Compile Include="Models\IdentityModels\SubmissionModel.cs" />
     <Compile Include="Models\IdentityModels\SubmittedAssignmentList.cs" />
+    <Compile Include="Models\IdentityModels\TeacherProfile.cs" />
+    <Compile Include="Models\IdentityModels\TeacherModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -511,6 +524,7 @@
     <Content Include="Content\DataTables\css\semanticui.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -530,13 +544,20 @@
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\PlagiarismChecker\Global.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\AddNewStudent.js" />
+    <Content Include="Scripts\PlagiarismChecker\ManageAdmin\TeacherAdministration.js" />
+    <Content Include="Scripts\PlagiarismChecker\ManageAdmin\TeacherDetail.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\AdminProfile.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\ClassAdministration.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\StudentAdministration.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\StudentDetail.js" />
+    <Content Include="Scripts\PlagiarismChecker\ManageTeacher\AssignmentAdministration.js" />
+    <Content Include="Scripts\PlagiarismChecker\ManageTeacher\AssignmentDetail.js" />
+    <Content Include="Scripts\PlagiarismChecker\ManageTeacher\MyProfile.js" />
+    <Content Include="Scripts\PlagiarismChecker\ManageTeacher\StudentDetail.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageUser\AddSubmission.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageUser\ManageAssignments.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageUser\MyProfile.js" />
+    <Content Include="Scripts\PlagiarismChecker\ManageTeacher\StudentAdministration.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -548,6 +569,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageAdmin\AssignmentAdministration.js" />
+    <Content Include="Upload\init.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -578,12 +600,20 @@
     <Content Include="Views\ManageAdmin\AddStudent.cshtml" />
     <Content Include="Views\ManageAdmin\ClassAdministration.cshtml" />
     <Content Include="Views\ManageAdmin\StudentDetail.cshtml" />
-    <Content Include="Upload\document-test.pdf" />
     <Content Include="Views\ManageUser\Index.cshtml" />
     <Content Include="Views\ManageUser\MyProfile.cshtml" />
     <Content Include="Views\ManageUser\AddSubmission.cshtml" />
     <Content Include="Views\ManageUser\WaitingForQuery.cshtml" />
     <Content Include="Views\ManageAdmin\AdminProfile.cshtml" />
+    <Content Include="Views\ManageAdmin\TeacherAdministration.cshtml" />
+    <Content Include="Views\ManageAdmin\AddNewTeacher.cshtml" />
+    <Content Include="Views\ManageAdmin\TeacherDetail.cshtml" />
+    <Content Include="Views\ManageTeacher\StudentAdministration.cshtml" />
+    <Content Include="Views\ManageTeacher\StudentDetail.cshtml" />
+    <Content Include="Views\ManageTeacher\AssignmentAdministration.cshtml" />
+    <Content Include="Views\ManageTeacher\AssignmentDetail.cshtml" />
+    <Content Include="Views\ManageTeacher\MyProfile.cshtml" />
+    <Content Include="Views\ManageAdmin\ImportStudents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -622,6 +652,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812100700024_AddNoteColumnToSubmittedAssignment.resx">
       <DependentUpon>201812100700024_AddNoteColumnToSubmittedAssignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812151228487_AddTeacherRelationship.resx">
+      <DependentUpon>201812151228487_AddTeacherRelationship.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

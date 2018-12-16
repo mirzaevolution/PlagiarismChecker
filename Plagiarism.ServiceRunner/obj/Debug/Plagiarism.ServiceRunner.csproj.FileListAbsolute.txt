@@ -57,3 +57,63 @@ D:\Programming\PlagiarismChecker\Plagiarism.ServiceRunner\bin\Debug\itextsharp.x
 D:\Programming\PlagiarismChecker\Plagiarism.ServiceRunner\obj\Debug\Plagiarism.ServiceRunner.csprojResolveAssemblyReference.cache
 D:\Programming\PlagiarismChecker\Plagiarism.ServiceRunner\obj\Debug\Plagiarism.ServiceRunner.exe
 D:\Programming\PlagiarismChecker\Plagiarism.ServiceRunner\obj\Debug\Plagiarism.ServiceRunner.pdb
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.ServiceRunner.exe.config
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.ServiceRunner.exe
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.ServiceRunner.pdb
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\EntityFramework.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\EntityFramework.SqlServer.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\FluentScheduler.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\MirzaCryptoHelpersV2.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.CoreLibrary.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.DataLayer.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Topshelf.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\itextsharp.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Annytab.Stemmer.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.CoreLibrary.pdb
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.DataLayer.pdb
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.DataLayer.dll.config
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\EntityFramework.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\EntityFramework.SqlServer.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\FluentScheduler.pdb
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\FluentScheduler.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\MirzaCryptoHelpersV2.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Topshelf.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\itextsharp.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\obj\Debug\Plagiarism.ServiceRunner.csprojResolveAssemblyReference.cache
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\obj\Debug\Plagiarism.ServiceRunner.csproj.CoreCompileInputs.cache
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\obj\Debug\Plagiarism.ServiceRunner.exe
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner\obj\Debug\Plagiarism.ServiceRunner.pdb
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.ServiceRunner.exe.config
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.ServiceRunner.exe
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.ServiceRunner.pdb
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\EntityFramework.dll
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\EntityFramework.SqlServer.dll
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\FluentScheduler.dll
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\MirzaCryptoHelpersV2.dll
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.CoreLibrary.dll
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.DataLayer.dll
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Topshelf.dll
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\itextsharp.dll
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Annytab.Stemmer.dll
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.CoreLibrary.pdb
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.DataLayer.pdb
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Plagiarism.DataLayer.dll.config
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\EntityFramework.xml
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\EntityFramework.SqlServer.xml
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\FluentScheduler.pdb
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\FluentScheduler.xml
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\MirzaCryptoHelpersV2.xml
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\Topshelf.xml
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\bin\Debug\itextsharp.xml
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\obj\Debug\Plagiarism.ServiceRunner.csprojResolveAssemblyReference.cache
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\obj\Debug\Plagiarism.ServiceRunner.csproj.CoreCompileInputs.cache
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\obj\Debug\Plagiarism.ServiceRunner.exe
+D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.ServiceRunner\obj\Debug\Plagiarism.ServiceRunner.pdb

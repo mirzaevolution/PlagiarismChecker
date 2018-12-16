@@ -1,0 +1,25 @@
+﻿@{
+	ViewBag.Title = "Error";
+}
+
+<h2>Oooppss, Some error(s) occurred.</h2>
+<p>Take a look in the description list below for more info.</p>
+
+
+<p><strong>Controller:</strong> @Model.Controller</p>
+<p><strong>Action:</strong> @Model.Action</p>
+
+@if (Model.Errors != null)
+{
+	<ul class="list-group">
+
+		@foreach (var error in Model.Errors)
+		{
+			<li class="list-group-item">@error</li>
+		}
+	</ul>
+}
+else
+{
+	<p>Unknown error was occured</p>
+}

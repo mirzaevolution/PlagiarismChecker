@@ -13,12 +13,14 @@ namespace Plagiarism.DataLayer.Models
         {
             Assignments = new List<Assignment>();
             SubmittedAssignments = new List<SubmittedAssignment>();
+            TeacherClasses = new List<TeacherClass>();
         }
         public string FullName { get; set; }
         public Guid? ClassID { get; set; }
         public virtual Class Class { get; set; }
         public virtual ICollection<Assignment> Assignments { get; set; }
         public virtual ICollection<SubmittedAssignment> SubmittedAssignments { get; set; }
+        public virtual ICollection<TeacherClass> TeacherClasses { get; set; }
 
     }
 }

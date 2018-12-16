@@ -1,0 +1,62 @@
+﻿@using PlagiarismCore.Models.IdentityModels
+@model  AssignmentModel
+@{
+	ViewBag.Title = "Subjects Administration";
+}
+<h3 class="text-primary"><span class="fa fa-tasks"></span> Subjects Administration</h3>
+
+@Html.Hidden("Message", (string)ViewBag.Message)
+<form class="mt-5" method="post" action="@Url.Action("AddNewAssignment","ManageAdmin")">
+	@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+	<div class="form-group">
+		@Html.AntiForgeryToken()
+		@Html.LabelFor(x => x.AssignmentName)
+		@Html.EditorFor(x => x.AssignmentName, new { htmlAttributes = new { @class = "form-control" } })
+		@Html.ValidationMessageFor(x => x.AssignmentName)
+	</div>
+	<button class="btn btn-success" type="submit"><span class="fa fa-plus"></span> Add New Subject</button>
+</form>
+<br />
+<div>
+	<table id="AssignmentTable" class="table display" style="width:100%;">
+		<thead class="bg-primary text-light">
+			<tr>
+				<th>Subject Name</th>
+				<th></th>
+			</tr>
+
+		</thead>
+
+	</table>
+
+</div>
+
+<div class="modal fade" id="ModalEditAssignment">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Edit Subject</h4>
+				<a href="#" class="close" data-dismiss="modal">&times;</a>
+			</div>
+			<div class="modal-body">
+				<div>
+					<div class="form-group">
+						<input type="hidden" id="AssignmentIdHidden" />
+						<label for="AssignmentNameEdit">Subject Name</label>
+						<input type="text" id="AssignmentNameEdit" class="form-control" />
+					</div>
+					<br />
+
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" onclick="Buttons.SaveEdit()" class="btn btn-primary" id="ButtonSaveEditAssignment">Save</button>
+				<button type="button" onclick="Buttons.RemoveAssignment()" class="btn btn-danger">Delete</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>
+@section scripts{
+	<script src="~/Scripts/PlagiarismChecker/ManageTeacher/AssignmentAdministration.js"></script>
+}

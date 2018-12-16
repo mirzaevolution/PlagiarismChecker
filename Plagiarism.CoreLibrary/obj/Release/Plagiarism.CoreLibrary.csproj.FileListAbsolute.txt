@@ -1,0 +1,17 @@
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.CoreLibrary\bin\Release\Plagiarism.CoreLibrary.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.CoreLibrary\bin\Release\Plagiarism.CoreLibrary.pdb
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.CoreLibrary\bin\Release\Annytab.Stemmer.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.CoreLibrary\bin\Release\itextsharp.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.CoreLibrary\bin\Release\itextsharp.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.CoreLibrary\obj\Release\Plagiarism.CoreLibrary.csprojResolveAssemblyReference.cache
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.CoreLibrary\obj\Release\Plagiarism.CoreLibrary.csproj.CoreCompileInputs.cache
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.CoreLibrary\obj\Release\Plagiarism.CoreLibrary.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.CoreLibrary\obj\Release\Plagiarism.CoreLibrary.pdb
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.CoreLibrary\bin\Release\Plagiarism.CoreLibrary.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.CoreLibrary\bin\Release\Plagiarism.CoreLibrary.pdb
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.CoreLibrary\bin\Release\Annytab.Stemmer.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.CoreLibrary\bin\Release\itextsharp.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.CoreLibrary\bin\Release\itextsharp.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.CoreLibrary\obj\Release\Plagiarism.CoreLibrary.csprojResolveAssemblyReference.cache
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.CoreLibrary\obj\Release\Plagiarism.CoreLibrary.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.CoreLibrary\obj\Release\Plagiarism.CoreLibrary.pdb

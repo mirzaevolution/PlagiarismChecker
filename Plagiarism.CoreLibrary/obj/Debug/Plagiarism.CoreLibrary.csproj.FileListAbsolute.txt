@@ -32,3 +32,11 @@ D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.CoreLibrar
 D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.CoreLibrary\obj\Debug\Plagiarism.CoreLibrary.csproj.CoreCompileInputs.cache
 D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.CoreLibrary\obj\Debug\Plagiarism.CoreLibrary.dll
 D:\programming\MyProjects\PlagiarismChecker\PlagiarismCore\Plagiarism.CoreLibrary\obj\Debug\Plagiarism.CoreLibrary.pdb
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.CoreLibrary\bin\Debug\Plagiarism.CoreLibrary.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.CoreLibrary\bin\Debug\Plagiarism.CoreLibrary.pdb
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.CoreLibrary\bin\Debug\Annytab.Stemmer.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.CoreLibrary\bin\Debug\itextsharp.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.CoreLibrary\bin\Debug\itextsharp.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.CoreLibrary\obj\Debug\Plagiarism.CoreLibrary.csprojResolveAssemblyReference.cache
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.CoreLibrary\obj\Debug\Plagiarism.CoreLibrary.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagiarism.CoreLibrary\obj\Debug\Plagiarism.CoreLibrary.pdb

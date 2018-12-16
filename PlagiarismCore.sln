@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plagiarism.DataLayer", "Pla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plagiarism.ServiceRunner", "Plagiarism.ServiceRunner\Plagiarism.ServiceRunner.csproj", "{C352A812-97B9-4C6E-B022-66981047ED4A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plagiarism.ServiceRunner.Installer", "Plagiarism.ServiceRunner.Installer\Plagiarism.ServiceRunner.Installer.csproj", "{97D25389-BE25-4F86-947A-31F6460C20A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C352A812-97B9-4C6E-B022-66981047ED4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C352A812-97B9-4C6E-B022-66981047ED4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C352A812-97B9-4C6E-B022-66981047ED4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97D25389-BE25-4F86-947A-31F6460C20A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97D25389-BE25-4F86-947A-31F6460C20A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97D25389-BE25-4F86-947A-31F6460C20A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97D25389-BE25-4F86-947A-31F6460C20A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -20,7 +20,8 @@ namespace Plagiarism.ServiceRunner.Engine
             try
             {
                 Console.WriteLine("Crawling all data....");
-                List<Assignment> allAssignments = _context.Assignments.Include(x => x.SubmittedAssignments).ToList();
+                List<Assignment> allAssignments = _context
+                    .Assignments.Include(x => x.SubmittedAssignments).ToList();
                 List<Class> allClasses = _context.Classes.Include(x => x.SubmittedAssignments).ToList();
                 foreach (Assignment assignment in allAssignments)
                 {
@@ -63,7 +64,8 @@ namespace Plagiarism.ServiceRunner.Engine
                         .SubmittedAssignments.OrderBy(x => x.Counter)
                         .GroupBy(x => x.Class.ClassName)
                         .SelectMany(x => x.Select(y => y))
-                        .Where(x => (x.Counter < max) && (x.IsAccepted) && x.Class.Id==submittedAssignment.Class.Id)
+                        .Where(x => (x.Counter < max) && (x.IsAccepted) 
+                        && x.Class.Id==submittedAssignment.Class.Id)
                         .ToList();
                     TextProcessing textProcessing = new TextProcessing(BaseWords.GetBaseWords());
                     PlagiarismChecker checker = new PlagiarismChecker();

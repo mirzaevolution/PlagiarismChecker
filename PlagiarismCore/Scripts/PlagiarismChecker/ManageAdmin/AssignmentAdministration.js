@@ -22,11 +22,14 @@
                     }
                 }
             ],
-            searching: false,
-            search: false,
-            paging: false,
+
+            searching: true,
+            search: true,
+            paging: true,
             info: false,
-            ordering: false
+            ordering: true,
+            scrollY: "400px",
+            scrollCollapse: true
         })
     },
     LoadSubmittedAssignment: function () {

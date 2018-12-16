@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-
 namespace PlagiarismCore.Models.IdentityModels
 {
     public class StudentModel
@@ -21,6 +17,7 @@ namespace PlagiarismCore.Models.IdentityModels
         [DataType(DataType.EmailAddress)]
         [Required]
         public string Email { get; set; }
+
         [Required]
         [Display(Name = "Assigned Class")]
         public Guid ClassID { get; set; }

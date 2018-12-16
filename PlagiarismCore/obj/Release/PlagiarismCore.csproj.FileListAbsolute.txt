@@ -1,0 +1,229 @@
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\ApplicationInsights.config
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\PlagiarismCore.dll.config
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\PlagiarismCore.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\PlagiarismCore.pdb
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Antlr3.Runtime.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\EntityFramework.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\EntityFramework.SqlServer.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.Agent.Intercept.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.DependencyCollector.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.Web.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.WindowsServer.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.ApplicationInsights.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.Core.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.Cookies.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.OAuth.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.Web.Infrastructure.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Newtonsoft.Json.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Owin.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Plagiarism.CoreLibrary.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Plagiarism.DataLayer.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\System.Web.Helpers.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\System.Web.Mvc.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\System.Web.Optimization.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\System.Web.Razor.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.Deployment.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.Razor.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\WebGrease.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\itextsharp.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Annytab.Stemmer.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Plagiarism.CoreLibrary.pdb
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Plagiarism.DataLayer.pdb
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Plagiarism.DataLayer.dll.config
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\EntityFramework.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\EntityFramework.SqlServer.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.Core.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.Cookies.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.OAuth.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\System.Web.Helpers.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\System.Web.Mvc.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\System.Web.Optimization.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\System.Web.Razor.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.Deployment.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.Razor.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Antlr3.Runtime.pdb
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Newtonsoft.Json.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.ApplicationInsights.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.DependencyCollector.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.WindowsServer.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.Web.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\bin\itextsharp.xml
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.csprojResolveAssemblyReference.cache
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.Migrations.InitialLoad.resources
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.Migrations.AddSubmissionDate.resources
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.Migrations.AddTwoFields.resources
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.Migrations.AddSubmittedAssignmentReferenceToClass.resources
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.Migrations.AddNoteColumnToSubmittedAssignment.resources
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.csproj.GenerateResource.Cache
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.csproj.CoreCompileInputs.cache
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.dll
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.pdb
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\ApplicationInsights.config
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\PlagiarismCore.dll.config
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\PlagiarismCore.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\PlagiarismCore.pdb
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Antlr3.Runtime.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\EntityFramework.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\EntityFramework.SqlServer.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.DependencyCollector.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.Web.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.WindowsServer.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.ApplicationInsights.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Web.Infrastructure.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Newtonsoft.Json.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Owin.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Plagiarism.CoreLibrary.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Plagiarism.DataLayer.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.Helpers.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.Mvc.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.Optimization.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.Razor.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.Deployment.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.Razor.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\WebGrease.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\itextsharp.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Annytab.Stemmer.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Plagiarism.CoreLibrary.pdb
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Plagiarism.DataLayer.pdb
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Plagiarism.DataLayer.dll.config
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\EntityFramework.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\EntityFramework.SqlServer.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.Helpers.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.Mvc.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.Optimization.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.Razor.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.Deployment.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.Razor.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Antlr3.Runtime.pdb
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Newtonsoft.Json.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.ApplicationInsights.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.DependencyCollector.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.WindowsServer.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.Web.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\itextsharp.xml
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.csprojResolveAssemblyReference.cache
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.Migrations.InitialLoad.resources
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.Migrations.AddSubmissionDate.resources
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.Migrations.AddTwoFields.resources
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.Migrations.AddSubmittedAssignmentReferenceToClass.resources
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.Migrations.AddNoteColumnToSubmittedAssignment.resources
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.csproj.GenerateResource.Cache
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.dll
+F:\Projects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.pdb
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\ApplicationInsights.config
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\PlagiarismCore.dll.config
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\PlagiarismCore.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\PlagiarismCore.pdb
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Antlr3.Runtime.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\EntityFramework.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\EntityFramework.SqlServer.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.DependencyCollector.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.Web.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.WindowsServer.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.ApplicationInsights.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Web.Infrastructure.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Newtonsoft.Json.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Owin.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Plagiarism.CoreLibrary.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Plagiarism.DataLayer.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.Helpers.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.Mvc.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.Optimization.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.Razor.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.Deployment.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.Razor.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\WebGrease.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\itextsharp.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Annytab.Stemmer.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Plagiarism.CoreLibrary.pdb
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Plagiarism.DataLayer.pdb
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Plagiarism.DataLayer.dll.config
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\EntityFramework.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\EntityFramework.SqlServer.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.Helpers.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.Mvc.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.Optimization.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.Razor.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.Deployment.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\System.Web.WebPages.Razor.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Antlr3.Runtime.pdb
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Newtonsoft.Json.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.ApplicationInsights.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.DependencyCollector.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.WindowsServer.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\Microsoft.AI.Web.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\itextsharp.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.csprojResolveAssemblyReference.cache
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.Migrations.InitialLoad.resources
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.Migrations.AddSubmissionDate.resources
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.Migrations.AddTwoFields.resources
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.Migrations.AddSubmittedAssignmentReferenceToClass.resources
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.Migrations.AddNoteColumnToSubmittedAssignment.resources
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.csproj.GenerateResource.Cache
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.pdb

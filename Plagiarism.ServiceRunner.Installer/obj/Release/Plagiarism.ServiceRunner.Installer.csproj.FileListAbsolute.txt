@@ -1,0 +1,10 @@
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner.Installer\bin\Release\Plagiarism.ServiceRunner.Installer.exe.config
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner.Installer\bin\Release\Plagiarism.ServiceRunner.Installer.exe
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner.Installer\bin\Release\Plagiarism.ServiceRunner.Installer.pdb
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner.Installer\obj\Release\Plagiarism.ServiceRunner.Installer.csprojResolveAssemblyReference.cache
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner.Installer\obj\Release\Plagiarism.ServiceRunner.Installer.FormServiceRunner.resources
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner.Installer\obj\Release\Plagiarism.ServiceRunner.Installer.Properties.Resources.resources
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner.Installer\obj\Release\Plagiarism.ServiceRunner.Installer.csproj.GenerateResource.Cache
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner.Installer\obj\Release\Plagiarism.ServiceRunner.Installer.csproj.CoreCompileInputs.cache
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner.Installer\obj\Release\Plagiarism.ServiceRunner.Installer.exe
+D:\programming\MyProjects\PlagiarismChecker.Deploy\PlagiarismCore\Plagiarism.ServiceRunner.Installer\obj\Release\Plagiarism.ServiceRunner.Installer.pdb

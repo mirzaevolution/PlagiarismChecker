@@ -10,9 +10,13 @@ namespace Plagiarism.DataLayer.Models
 {
     public class MainContext:IdentityDbContext<CommonAppUser>
     {
-        public MainContext() : base("name=PlagiarismContext") { }
+        public MainContext() : base("name=PlagiarismContext")
+        {
+
+        }
         public DbSet<Assignment> Assignments { get; set; }
         public DbSet<Class> Classes { get; set; }
+        public DbSet<TeacherClass> TeacherClasses { get; set; }
         public DbSet<SubmittedAssignment> SubmittedAssignments { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -28,6 +32,7 @@ namespace Plagiarism.DataLayer.Models
                 .WithMany(x => x.CommonAppUsers)
                 .HasForeignKey(x=>x.ClassID)
                 .WillCascadeOnDelete();
+
             userEntity.HasMany(x => x.Assignments)
                 .WithMany(x => x.CommonAppUsers)
                 .Map(rel =>
@@ -36,6 +41,16 @@ namespace Plagiarism.DataLayer.Models
                     rel.MapRightKey("AssignmentId");
                     rel.ToTable("UserAssignments");
                 });
+            userEntity.HasMany(x => x.TeacherClasses)
+                .WithMany(x => x.Teachers)
+                .Map(rel =>
+                {
+                    rel.MapLeftKey("TeacherId");
+                    rel.MapRightKey("TeacherClass");
+                    rel.ToTable("UserTeacherTeacherClasses");
+                });
+                
+            
 
 
             var classEntity = modelBuilder.Entity<Class>();
@@ -47,6 +62,15 @@ namespace Plagiarism.DataLayer.Models
             classEntity.HasMany(x => x.CommonAppUsers)
                 .WithOptional(x => x.Class).HasForeignKey(x=>x.ClassID);
             classEntity.ToTable("StudentClasses");
+
+            var teacherClassEntity = modelBuilder.Entity<TeacherClass>();
+            teacherClassEntity.HasKey(x => x.Id);
+            teacherClassEntity.Property(x => x.ClassName)
+                .HasMaxLength(256)
+                .IsRequired()
+                .IsUnicode(false);
+            teacherClassEntity.HasOptional(x => x.StudentClass)
+                .WithOptionalDependent(x => x.TeacherClass).WillCascadeOnDelete(false);
 
             var assignmentEntity = modelBuilder.Entity<Assignment>();
             assignmentEntity.HasKey(x => x.Id);
