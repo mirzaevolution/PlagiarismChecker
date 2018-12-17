@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Import Students";
+}
+
+
+<div class="p-3">
+	<h4 class="text-primary"><span class="fa fa-users"></span> Import Students From Excel</h4>
+	<br />
+	<div>
+		<form action="/ManageAdmin/BulkAddStudents" method="post" enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="excelFile" class="font-weight-bold">Select Excel File</label><br />
+				<input type="file" id="excelFile" name="excelFile" accept=".xlsx" required/>
+			</div>
+			<br />
+			<button type="submit" class="btn btn-outline-primary"><span class="fa fa-upload"></span> Import</button>
+		</form>
+	</div>
+</div>
+

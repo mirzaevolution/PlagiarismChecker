@@ -7,6 +7,7 @@
             $('#ClassTable').DataTable().clear().destroy();
         }
         var url = "/CoreAPI/GetAllClasses";
+        var isAdmin = $("#IsAdmin").val();
         $("#ClassTable").DataTable({
             ajax: url,
             columns: [
@@ -16,9 +17,14 @@
                     data: "Id",
                     render: function (data, type, row) {
                         if (type === 'display') {
-                            data = "<button class='btn btn-sm btn-primary' onclick='Buttons.ShowEdit(\"" + data + "\",\"" + row.ClassName + "\")'>Edit</button>" +
-                                "  <button class='btn btn-sm btn-success' onclick='Buttons.ShowRelatedStudents(\"" + data + "\")'>Show Students</button>"
-                                ;
+                            if (isAdmin === 'yes') {
+                                data = "<button class='btn btn-sm btn-primary' onclick='Buttons.ShowEdit(\"" + data + "\",\"" + row.ClassName + "\")'>Edit</button>" +
+                                    "  <button class='btn btn-sm btn-success' onclick='Buttons.ShowRelatedStudents(\"" + data + "\")'>Show Students</button>";
+                            } else {
+
+                                data = "<button class='btn btn-sm btn-success' onclick='Buttons.ShowRelatedStudents(\"" + data + "\")'>Show Students</button>";
+                            }
+
                         }
                         return data;
                     }

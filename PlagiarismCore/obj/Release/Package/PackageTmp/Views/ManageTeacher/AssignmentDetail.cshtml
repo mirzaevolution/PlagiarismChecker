@@ -1,0 +1,94 @@
+﻿
+@{
+	ViewBag.Title = "Assignments Detail";
+}
+
+<div class="p-3">
+	<h3 class="text-primary"><span class="fa fa-tasks"></span> Subjects Administration</h3>
+	@Html.Hidden("UserID", (string)ViewBag.UserID)
+
+	@Html.Hidden("ID", (string)ViewBag.ID)
+	<p class="lead text-info">Current subject detail of <span class="badge badge-primary"> @ViewBag.SubjectName</span></p>
+
+	<br />
+	<ul class="nav nav-tabs">
+		<li class="nav-item">
+			<a href="#DivCurrentStudents" class="nav-link active" data-toggle="tab">Assigned Students</a>
+		</li>
+		<li class="nav-item">
+			<a href="#DivUnassignedStudents" class="nav-link " data-toggle="tab">Unassigned Students</a>
+		</li>
+		<li class="nav-item">
+			<a href="#DivSubmittedAssgnments" class="nav-link" data-toggle="tab">All Submitted Assignments</a>
+		</li>
+	</ul>
+	<div class="tab-content">
+		<div id="DivCurrentStudents" class="tab-pane container active" style="margin-top:5px">
+			<h4 class="text-primary">Assigned Students</h4><br />
+			<div class="form-group">
+				<label for="SelectClasses1">Select Class</label>
+				<select id="SelectClasses1" class="form-control" onchange="Page.GetAssignedStudents()"></select>
+			</div>
+			<br />
+			<table id="TableAssignedStudents" class="table display" style="width:100%;">
+				<thead class="bg-success text-light">
+					<tr>
+						<th>Name</th>
+						<th>Class</th>
+						<th></th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div id="DivUnassignedStudents" class="tab-pane container fade" style="margin-top:5px">
+			<h4 class="text-primary">Un-Assigned Students</h4><br />
+			<div class="form-group">
+				<label for="SelectClasses2">Select Class</label>
+				<select id="SelectClasses2" class="form-control" onchange="Page.GetUnassignedStudents()"></select>
+			</div>
+			<br />
+			<table id="TableUnAssignedStudents" class="table display" style="width:100%;">
+				<thead class="bg-danger text-light">
+					<tr>
+						<th>Select</th>
+						<th>Name</th>
+						<th>Class</th>
+					</tr>
+				</thead>
+			</table>
+			<br />
+			<button type="button" class="btn btn-primary" id="ButtonAddToSubject">Add To Subject</button>
+		</div>
+		<div id="DivSubmittedAssgnments" class="tab-pane container fade" style="margin-top:5px">
+			<h4 class="text-primary">Submitted Assignments</h4><br />
+			<div class="form-group">
+				<label for="SelectClasses3">Select Class</label>
+				<select id="SelectClasses3" class="form-control" onchange="Page.GetSubmittedAssignments()"></select>
+			</div><br />
+			<table id="TableSubmittedAssignment" class="table display nowrap" style="width:100%;">
+				<thead class="bg-primary text-light">
+					<tr>
+						<th>Student Name</th>
+						<th>Class</th>
+						<th>Subject Name</th>
+						<th>Assignment Title</th>
+						<th>Ranking</th>
+						<th>Uploaded File</th>
+						<th>Percentage %</th>
+						<th>Description</th>
+						<th>Status</th>
+						<th>Score</th>
+						<th>Score Status</th>
+						<th>Note</th>
+						<th>Submission Time</th>
+						<th>Is Checked</th>
+					</tr>
+				</thead>
+
+			</table>
+		</div>
+	</div>
+</div>
+@section scripts{
+<script src="~/Scripts/PlagiarismChecker/ManageTeacher/AssignmentDetail.js"></script>
+}

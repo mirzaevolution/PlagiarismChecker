@@ -1,0 +1,228 @@
+﻿@using PlagiarismCore.Models.IdentityModels
+@model UploadSimulationModel
+
+@{
+	ViewBag.Title = "Plagiarism Checker Simulation";
+	Layout = "~/Views/Shared/_layoutDark.cshtml";
+}
+@Html.HiddenFor(x=>x.IsReadyToProcess)
+<div class="p-3">
+	<h2 style="font-family:HeaderFont" class="text-center">Plagiarism Checker Simulation</h2>
+	<br />
+	<p class="text-warning">"This plagiarism checker uses stemmer engine that based on <a href="http://snowball.tartarus.org/algorithms/english/stemmer.html">Snowball Tartarus</a> algorithm."</p>
+	<br />
+	<figure>
+		<legend>Upload Sample and Comparer Files</legend>
+		<br />
+		<form action="/Simulation/UploadHandler" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="step" id="step" value="@Model.Step"/>
+			<div class="form-group">
+				<label for="sampleFile"><strong>Sample File</strong></label><br />
+				<input type="file" name="sampleFile" id="sampleFile" accept=".pdf" required/>
+			</div>
+			<div class="form-group">
+				<label for="comparerFile"><strong>Comparer File</strong></label><br />
+				<input type="file" name="comparerFile" id="comparerFile" accept=".pdf" required />
+			</div>
+			<br />
+			<button type="submit" class="btn btn-primary"><span class="fa fa-upload"></span> Upload</button>
+		</form>
+	</figure>
+	<br />
+	<div class="row">
+		<div class="col-md-12">
+			<button type="button" id="ButtonTokenizing" class="btn btn-primary">Tokenizing</button> 
+			<button type="button" id="ButtonPurifying" class="btn btn-danger">Purifying</button> 
+			<button type="button" id="ButtonStopwords" class="btn btn-info">Stopwords</button> 
+			<button type="button" id="ButtonStemming" class="btn btn-secondary">Stemming</button>
+			<button type="button" id="ButtonSorting" class="btn btn-warning">Sorting</button>
+			<button type="button" id="ButtonAnalyze" class="btn btn-success">Analyze</button>
+
+
+		</div>
+	</div>
+	<br />
+	<div class="row">
+		<div class="col-md-6 mt-3">
+			<h4><span class="fa fa-file-pdf-o"></span> Sample File</h4>
+			<br />
+			<div class="accordion" id="SampleRootAccordion">
+				<div class="card">
+					<div class="card-header bg-danger">
+						<h4 class="card-title">
+							<span class="fa fa-angle-double-down"></span>
+							<a href="#SamplePlainText" class="text-light" data-toggle="collapse">Original Text</a>
+						</h4>
+					</div>
+					<div id="SamplePlainText" class="card-body text-dark @(String.IsNullOrEmpty(Model.SampleText)?"collapse":"")" data-parent="#SampleRootAccordion">
+						<div class="form-group">
+							<textarea id="sampleText" class="form-control" rows="15" style="min-width: 100%" readonly>@((string)Model.SampleText)</textarea>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header bg-danger">
+						<h4 class="card-title">
+							<span class="fa fa-angle-double-down"></span>
+							<a href="#SampleTokenizing" class="text-light" data-toggle="collapse" >Tokenizing</a>
+						</h4>
+					</div>
+					<div id="SampleTokenizing" class="card-body text-dark collapse" data-parent="#SampleRootAccordion">
+						<div class="form-group">
+							<textarea id="sampleTokenizingText" class="form-control" rows="15" style="min-width: 100%" readonly></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header bg-danger">
+						<h4 class="card-title">
+							<span class="fa fa-angle-double-down"></span>
+							<a href="#SamplePurifying" class="text-light" data-toggle="collapse">Purifying</a>
+						</h4>
+					</div>
+					<div id="SamplePurifying" class="card-body text-dark collapse" data-parent="#SampleRootAccordion">
+						<div class="form-group">
+							<textarea id="samplePurifyingText" class="form-control" rows="15" style="min-width: 100%" readonly></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header bg-danger">
+						<h4 class="card-title">
+							<span class="fa fa-angle-double-down"></span>
+							<a href="#SampleStopword" class="text-light" data-toggle="collapse">Stopwords</a>
+						</h4>
+					</div>
+					<div id="SampleStopword" class="card-body text-dark collapse" data-parent="#SampleRootAccordion">
+						<div class="form-group">
+							<textarea id="sampleStopwordText" class="form-control" rows="15" style="min-width: 100%" readonly></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header bg-danger">
+						<h4 class="card-title">
+							<span class="fa fa-angle-double-down"></span>
+							<a href="#SampleStemming" class="text-light" data-toggle="collapse">Stemming</a>
+						</h4>
+					</div>
+					<div id="SampleStemming" class="card-body text-dark collapse" data-parent="#SampleRootAccordion">
+						<div class="form-group">
+							<textarea id="sampleStemmingText" class="form-control" rows="15" style="min-width: 100%" readonly></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header bg-danger">
+						<h4 class="card-title">
+							<span class="fa fa-angle-double-down"></span>
+							<a href="#SampleSorting" class="text-light" data-toggle="collapse">Sorting</a>
+						</h4>
+					</div>
+					<div id="SampleSorting" class="card-body text-dark collapse" data-parent="#SampleRootAccordion">
+						<div class="form-group">
+							<textarea id="sampleSortingText" class="form-control" rows="15" style="min-width: 100%" readonly></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 mt-3">
+			<h4><span class="fa fa-file-pdf-o"></span> Comparer File</h4>
+			<br />
+			<div class="accordion" id="ComparerRootAccordion">
+				<div class="card">
+					<div class="card-header bg-primary">
+						<h4 class="card-title">
+							<span class="fa fa-angle-double-down"></span>
+							<a href="#ComparerPlainText" class="text-light" data-toggle="collapse">Original Text</a>
+						</h4>
+					</div>
+					<div id="ComparerPlainText" class="card-body text-dark @(string.IsNullOrEmpty(Model.ComparerText)?"collapse":"")" data-parent="#ComparerRootAccordion">
+						<div class="form-group">
+							<textarea id="comparerText" class="form-control" rows="15" style="min-width: 100%" readonly>@((string)Model.ComparerText)</textarea>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header bg-primary">
+						<h4 class="card-title">
+							<span class="fa fa-angle-double-down"></span>
+							<a href="#ComparerTokenizing" class="text-light" data-toggle="collapse">Tokenizing</a>
+						</h4>
+					</div>
+					<div id="ComparerTokenizing" class="card-body text-dark collapse" data-parent="#ComparerRootAccordion">
+						<div class="form-group">
+							<textarea id="comparerTokenizingText" class="form-control" rows="15" style="min-width: 100%" readonly></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header bg-primary">
+						<h4 class="card-title">
+							<span class="fa fa-angle-double-down"></span>
+							<a href="#ComparerPurifying" class="text-light" data-toggle="collapse">Purifying</a>
+						</h4>
+					</div>
+					<div id="ComparerPurifying" class="card-body text-dark collapse" data-parent="#ComparerRootAccordion">
+						<div class="form-group">
+							<textarea id="comparerPurifyingText" class="form-control" rows="15" style="min-width: 100%" readonly></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header bg-primary">
+						<h4 class="card-title">
+							<span class="fa fa-angle-double-down"></span>
+							<a href="#ComparerStopword" class="text-light" data-toggle="collapse">Stopwords</a>
+						</h4>
+					</div>
+					<div id="ComparerStopword" class="card-body text-dark collapse" data-parent="#ComparerRootAccordion">
+						<div class="form-group">
+							<textarea id="comparerStopwordsText" class="form-control" rows="15" style="min-width: 100%" readonly></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header bg-primary">
+						<h4 class="card-title">
+							<span class="fa fa-angle-double-down"></span>
+							<a href="#ComparerStemming" class="text-light" data-toggle="collapse">Stemming</a>
+						</h4>
+					</div>
+					<div id="ComparerStemming" class="card-body text-dark collapse" data-parent="#ComparerRootAccordion">
+						<div class="form-group">
+							<textarea id="comparerStemmingText" class="form-control" rows="15" style="min-width: 100%" readonly></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header bg-primary">
+						<h4 class="card-title">
+							<span class="fa fa-angle-double-down"></span>
+							<a href="#ComparerSorting" class="text-light" data-toggle="collapse">Sorting</a>
+						</h4>
+					</div>
+					<div id="ComparerSorting" class="card-body text-dark collapse" data-parent="#ComparerRootAccordion">
+						<div class="form-group">
+							<textarea id="comparerSortingText" class="form-control" rows="15" style="min-width: 100%" readonly></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br />
+	<h4 class="text-light">Process Result</h4>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="form-group">
+				<textarea id="resultText" class="form-control" style="min-width:100%;background-color:black;color:lime;font-family:Consolas" rows="10"></textarea>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section scripts{
+	<script src="~/Scripts/PlagiarismChecker/Simulation/UploadHandler.js"></script>
+}

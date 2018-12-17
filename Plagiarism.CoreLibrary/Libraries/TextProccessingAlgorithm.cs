@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 using System.Text.RegularExpressions;
-
+//http://snowball.tartarus.org/algorithms/english/stemmer.html
 namespace Plagiarism.CoreLibrary.Libraries
 {
     public class TextProcessing
@@ -103,6 +103,7 @@ namespace Plagiarism.CoreLibrary.Libraries
 
             //5. Stemming process
             EnglishStemmer stemmer = new EnglishStemmer();
+            
             string[] stemmedWords = stemmer.GetSteamWords(stopwordsRemoval);
 
 

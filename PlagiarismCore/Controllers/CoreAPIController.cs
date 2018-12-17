@@ -18,10 +18,8 @@ using System.Diagnostics;
 namespace PlagiarismCore.Controllers
 {
     [Authorize]
-    public class CoreAPIController : Controller
+    public class CoreAPIController : BaseController
     {
-        public UserManager<CommonAppUser> UserManager => HttpContext.GetOwinContext().GetUserManager<UserManager<CommonAppUser>>();
-        public SignInManager<CommonAppUser, string> SignInManager => HttpContext.GetOwinContext().Get<SignInManager<CommonAppUser, string>>();
         public RoleManager<IdentityRole, string> RoleManager => HttpContext.GetOwinContext().Get<RoleManager<IdentityRole, string>>();
         public MainContext Context => HttpContext.GetOwinContext().Get<MainContext>();
 

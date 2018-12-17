@@ -382,3 +382,6 @@ D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\Plagiarism
 D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.AddTeacherRelationship.resources
 D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\EPPlus.dll
 D:\programming\MyProjects\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\EPPlus.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\EPPlus.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\EPPlus.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Debug\PlagiarismCore.Migrations.AddTeacherRelationship.resources

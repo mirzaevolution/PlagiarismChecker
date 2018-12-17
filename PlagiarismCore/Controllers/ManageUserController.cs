@@ -20,10 +20,8 @@ using Plagiarism.CoreLibrary.Libraries;
 namespace PlagiarismCore.Controllers
 {
     [Authorize(Roles = "Student")]
-    public class ManageUserController : Controller
+    public class ManageUserController : BaseController
     {
-        public UserManager<CommonAppUser> UserManager => HttpContext.GetOwinContext().GetUserManager<UserManager<CommonAppUser>>();
-        public SignInManager<CommonAppUser, string> SignInManager => HttpContext.GetOwinContext().Get<SignInManager<CommonAppUser, string>>();
         public RoleManager<IdentityRole, string> RoleManager => HttpContext.GetOwinContext().Get<RoleManager<IdentityRole, string>>();
         public MainContext Context => HttpContext.GetOwinContext().Get<MainContext>();
 
@@ -99,48 +97,49 @@ namespace PlagiarismCore.Controllers
                                 }
 
                                 model.Data = data;
-                                int? latestCounter =
-                                    Context.SubmittedAssignments
-                                    .Where(x =>
-                                         (x.Assignment.Id == assignment.Id) && x.Class.Id == commonAppUser.Class.Id)
-                                    .OrderBy(x => x.Counter)
-                                    .Select(x => x.Counter)
-                                    .ToList()
-                                    .LastOrDefault();
-                                if (latestCounter != null)
+                                //int? latestCounter =
+                                //    Context.SubmittedAssignments
+                                //    .Where(x =>
+                                //            x.Title.Equals(model.Title,StringComparison.InvariantCultureIgnoreCase) && 
+                                //            x.Assignment.Id == assignment.Id && 
+                                //            x.Class.Id == commonAppUser.Class.Id)
+                                //    .OrderBy(x => x.Counter)
+                                //    .Select(x => x.Counter)
+                                //    .ToList()
+                                //    .LastOrDefault();
+                                var counterResult = Context.SubmittedAssignments
+                                    .OrderByDescending(ord => ord.Counter)
+                                    .FirstOrDefault(x => x.Title.Trim().Equals(model.Title.Trim(), StringComparison.InvariantCultureIgnoreCase) &&
+                                                x.Assignment.Id == assignment.Id &&
+                                                x.Class.Id == commonAppUser.Class.Id);
+                                int latestCounter = counterResult == null ? 0 : counterResult.Counter;
+
+                                model.Rank = latestCounter + 1;
+
+                                model.UploadedTime = DateTime.Now;
+
+                                var submit = new SubmittedAssignment
                                 {
-                                    model.Rank = latestCounter.Value + 1;
-
-                                    model.UploadedTime = DateTime.Now;
-
-                                    var submit = new SubmittedAssignment
-                                    {
-                                        Assignment = assignment,
-                                        Counter = model.Rank,
-                                        Data = model.Data,
-                                        SubmissionDate = model.UploadedTime,
-                                        UploadedFilePath = model.UploadedFilePath,
-                                        Title = model.Title,
-                                        Class = commonAppUser.Class
-                                    };
-                                    if (model.Rank == 1 || latestCounter.Value == 0)
-                                    {
-                                        submit.Description = "First Submission";
-                                        submit.IsAccepted = true;
-                                        submit.IsChecked = true;
-                                    }
-                                    commonAppUser.SubmittedAssignments.Add(submit);
-
-                                    var result = await UserManager.UpdateAsync(commonAppUser);
-                                    if (!result.Succeeded)
-                                    {
-                                        errors.AddRange(result.Errors);
-                                    }
+                                    Assignment = assignment,
+                                    Counter = model.Rank,
+                                    Data = model.Data,
+                                    SubmissionDate = model.UploadedTime,
+                                    UploadedFilePath = model.UploadedFilePath,
+                                    Title = model.Title,
+                                    Class = commonAppUser.Class
+                                };
+                                if (model.Rank == 1 || latestCounter == 0)
+                                {
+                                    submit.Description = "First Submission";
+                                    submit.IsAccepted = true;
+                                    submit.IsChecked = true;
                                 }
-                                else
+                                commonAppUser.SubmittedAssignments.Add(submit);
+
+                                var result = await UserManager.UpdateAsync(commonAppUser);
+                                if (!result.Succeeded)
                                 {
-                                    success = false;
-                                    errors.Add("Cannot retrieve latest submitted rank from database");
+                                    errors.AddRange(result.Errors);
                                 }
                             }
                             else
@@ -170,7 +169,7 @@ namespace PlagiarismCore.Controllers
             catch(Exception ex)
             {
                 success = false;
-                errors.Add(ex.ToString());
+                errors.Add(ex.Message);
             }
             if(success && errors.Count==0)
             {

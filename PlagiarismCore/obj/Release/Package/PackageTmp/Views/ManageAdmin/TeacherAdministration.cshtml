@@ -1,0 +1,33 @@
+﻿
+@{
+	ViewBag.Title = "Teachers Administration";
+}
+
+<h3 class="text-primary"><span class="fa fa-users"></span> Teachers Administration</h3>
+
+<div class="mt-5">
+	<a class="btn btn-success" href="@Url.Action("AddNewTeacher","ManageAdmin")">
+		<span class="fa fa-user-plus"></span> Add New Teacher
+	</a>
+</div>
+<br />
+<div>
+	<table id="TeacherTable" class="table display nowrap" style="width:100%">
+		<thead class="bg-primary text-light">
+			<tr>
+				<th>Full Name</th>
+				<th>Email</th>
+				<th>Teacher ID</th>
+				<th>Total Classes</th>
+				<th>Total Subjects</th>
+				<th></th>
+			</tr>
+
+		</thead>
+	</table>
+
+</div>
+
+@section scripts{
+	<script src="~/Scripts/PlagiarismChecker/ManageAdmin/TeacherAdministration.js"></script>
+}

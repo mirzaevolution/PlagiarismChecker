@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Annytab.Stemmer, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Annytab.Stemmer.1.2.0.0\lib\net451\Annytab.Stemmer.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -185,11 +188,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CoreAPIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageAdminController.cs" />
     <Compile Include="Controllers\ManageTeacherController.cs" />
     <Compile Include="Controllers\ManageUserController.cs" />
+    <Compile Include="Controllers\SimulationController.cs" />
+    <Compile Include="Extensions\BaseWords.cs" />
     <Compile Include="Extensions\GlobalErrorHandlerAttribute.cs" />
     <Compile Include="Extensions\IdentityHtmlHelpers.cs" />
     <Compile Include="Global.asax.cs">
@@ -234,6 +240,7 @@
     <Compile Include="Models\IdentityModels\SubmittedAssignmentList.cs" />
     <Compile Include="Models\IdentityModels\TeacherProfile.cs" />
     <Compile Include="Models\IdentityModels\TeacherModel.cs" />
+    <Compile Include="Models\IdentityModels\UploadSimulationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -558,6 +565,7 @@
     <Content Include="Scripts\PlagiarismChecker\ManageUser\ManageAssignments.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageUser\MyProfile.js" />
     <Content Include="Scripts\PlagiarismChecker\ManageTeacher\StudentAdministration.js" />
+    <Content Include="Scripts\PlagiarismChecker\Simulation\UploadHandler.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -614,9 +622,12 @@
     <Content Include="Views\ManageTeacher\AssignmentDetail.cshtml" />
     <Content Include="Views\ManageTeacher\MyProfile.cshtml" />
     <Content Include="Views\ManageAdmin\ImportStudents.cshtml" />
+    <Content Include="Views\Simulation\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutDark.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

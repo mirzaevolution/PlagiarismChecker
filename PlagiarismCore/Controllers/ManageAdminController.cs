@@ -19,10 +19,8 @@ namespace PlagiarismCore.Controllers
 {
 
     [Authorize(Roles = "Admin")]
-    public class ManageAdminController : Controller
+    public class ManageAdminController : BaseController
     {
-        public UserManager<CommonAppUser> UserManager => HttpContext.GetOwinContext().GetUserManager<UserManager<CommonAppUser>>();
-        public SignInManager<CommonAppUser, string> SignInManager => HttpContext.GetOwinContext().Get<SignInManager<CommonAppUser, string>>();
         public RoleManager<IdentityRole, string> RoleManager => HttpContext.GetOwinContext().Get<RoleManager<IdentityRole, string>>();
         public MainContext Context => HttpContext.GetOwinContext().Get<MainContext>();
 

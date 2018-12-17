@@ -227,3 +227,6 @@ D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\Plagia
 D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.csproj.GenerateResource.Cache
 D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.dll
 D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.pdb
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\EPPlus.dll
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\bin\EPPlus.xml
+D:\Programming\PlagiarismChecker.CorePackages\Source Codes\PlagiarismCore\PlagiarismCore\obj\Release\PlagiarismCore.Migrations.AddTeacherRelationship.resources

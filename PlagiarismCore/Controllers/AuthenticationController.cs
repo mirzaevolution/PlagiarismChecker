@@ -16,12 +16,9 @@ using PlagiarismCore.Models.IdentityModels;
 
 namespace PlagiarismCore.Controllers
 {
-    public class AuthenticationController : Controller
+    public class AuthenticationController : BaseController
     {
-
-        public UserManager<CommonAppUser> UserManager => HttpContext.GetOwinContext().GetUserManager<UserManager<CommonAppUser>>();
-        public SignInManager<CommonAppUser, string> SignInManager => HttpContext.GetOwinContext().Get<SignInManager<CommonAppUser,string>>();
-
+        
 
         public ActionResult Login(string returnUrl = "/")
         {
