@@ -85,12 +85,16 @@
                 },
                 { data: "Score" },
                 { data: "ScoreStatus" },
-                { data: "Note"},
+                { data: "Teacher" },
+                { data: "Note" },
                 {
                     data: "Id",
                     render: function (data, type, row) {
-                        if (type === 'display') {
+                        if (type === 'display' && row.IsChecked !== 'In Review') {
                             data = '<button class="btn btn-primary" onclick="Buttons.ShowEditScore(\'' + data + '\',\'' + row.Score + '\')"> Edit Score</button>';
+                        }
+                        else {
+                            data = "";
                         }
                         return data;
                     }

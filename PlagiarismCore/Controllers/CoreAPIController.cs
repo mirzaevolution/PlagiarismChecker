@@ -192,7 +192,8 @@ namespace PlagiarismCore.Controllers
                     ScoreStatus = x.Score == 0 ? "Waiting" : "Done",
                     x.Counter,
                     IsChecked = x.IsChecked ? "Checked" : "In Review",
-                    Note = string.IsNullOrEmpty(x.Note) ? "" : x.Note
+                    Note = string.IsNullOrEmpty(x.Note) ? "" : x.Note,
+                    Teacher = string.IsNullOrEmpty(x.Teacher)? "": x.Teacher
                 })
                 .ToList();
 
@@ -379,9 +380,15 @@ namespace PlagiarismCore.Controllers
                 else
                 {
                     var submittedAssignment = Context.SubmittedAssignments.Find(Guid.Parse(assignmentId));
+                    
                     if (submittedAssignment != null)
                     {
                         submittedAssignment.Score = score;
+                        var user = UserManager.FindById(User.Identity.GetUserId());
+                        if(user!=null)
+                        {
+                            submittedAssignment.Teacher = user.FullName;
+                        }
                         int result = Context.SaveChanges();
                         if (result <= 0)
                         {
@@ -1022,6 +1029,11 @@ namespace PlagiarismCore.Controllers
                 list.Clear();
             }
             return Json(new { data = list }, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetSubjectsByTeacherRole()
+        {
+            return GetTeacherSubjects(User.Identity.GetUserId());
         }
         #endregion
     }

@@ -13,7 +13,7 @@ namespace PlagiarismCore.Models.IdentityModels
         [Required]
         public string FullName { get; set; }
 
-        [Display(Name = "Student ID")]
+        [Display(Name = "Teacher ID")]
         [Required]
         public string TeacherID { get; set; }
 

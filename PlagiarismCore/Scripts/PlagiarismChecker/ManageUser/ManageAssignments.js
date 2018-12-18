@@ -20,6 +20,7 @@
                 { data: "Status" },
                 { data: "Score" },
                 { data: "ScoreStatus" },
+                { data: "Teacher" },
                 { data: "Note" },
                 {
                     data: "UploadedFilePath",

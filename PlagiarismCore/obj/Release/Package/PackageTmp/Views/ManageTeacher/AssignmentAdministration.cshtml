@@ -4,9 +4,9 @@
 	ViewBag.Title = "Subjects Administration";
 }
 <h3 class="text-primary"><span class="fa fa-tasks"></span> Subjects Administration</h3>
-
+<br />
 @Html.Hidden("Message", (string)ViewBag.Message)
-<form class="mt-5" method="post" action="@Url.Action("AddNewAssignment","ManageAdmin")">
+@*<form class="mt-5" method="post" action="@Url.Action("AddNewAssignment","ManageAdmin")">
 	@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 	<div class="form-group">
 		@Html.AntiForgeryToken()
@@ -16,7 +16,7 @@
 	</div>
 	<button class="btn btn-success" type="submit"><span class="fa fa-plus"></span> Add New Subject</button>
 </form>
-<br />
+<br />*@
 <div>
 	<table id="AssignmentTable" class="table display" style="width:100%;">
 		<thead class="bg-primary text-light">

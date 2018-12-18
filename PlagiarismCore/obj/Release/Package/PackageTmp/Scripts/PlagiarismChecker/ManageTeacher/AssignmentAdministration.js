@@ -8,7 +8,7 @@
         if ($.fn.DataTable.isDataTable("#AssignmentTable")) {
             $('#AssignmentTable').DataTable().clear().destroy();
         }
-        var url = "/CoreAPI/GetAllAssignments";
+        var url = "/CoreAPI/GetSubjectsByTeacherRole";
         $("#AssignmentTable").DataTable({
             ajax: url,
             columns: [

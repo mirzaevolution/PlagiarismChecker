@@ -29,16 +29,28 @@
 		</form>
 	</figure>
 	<br />
-	<div class="row">
-		<div class="col-md-12">
-			<button type="button" id="ButtonTokenizing" class="btn btn-primary">Tokenizing</button> 
-			<button type="button" id="ButtonPurifying" class="btn btn-danger">Purifying</button> 
-			<button type="button" id="ButtonStopwords" class="btn btn-info">Stopwords</button> 
-			<button type="button" id="ButtonStemming" class="btn btn-secondary">Stemming</button>
-			<button type="button" id="ButtonSorting" class="btn btn-warning">Sorting</button>
-			<button type="button" id="ButtonAnalyze" class="btn btn-success">Analyze</button>
-
-
+	<div>
+		<div class="navbar navbar-expand-sm bg-dark">
+			<ul class="navbar-nav">
+				<li class="nav-item p-1">
+					<button type="button" id="ButtonTokenizing" class="btn btn-primary">Tokenizing</button>
+				</li>
+				<li class="nav-item p-1">
+					<button type="button" id="ButtonPurifying" class="btn btn-danger">Purifying</button>
+				</li>
+				<li class="nav-item p-1">
+					<button type="button" id="ButtonStopwords" class="btn btn-info">Stopwords</button>
+				</li>
+				<li class="nav-item p-1">
+					<button type="button" id="ButtonStemming" class="btn btn-secondary">Stemming</button>
+				</li>
+				<li class="nav-item p-1">
+					<button type="button" id="ButtonSorting" class="btn btn-warning">Sorting</button>
+				</li>
+				<li class="nav-item p-1">
+					<button type="button" id="ButtonAnalyze" class="btn btn-success">Analyze</button>
+				</li>
+			</ul>
 		</div>
 	</div>
 	<br />
@@ -58,6 +70,11 @@
 						<div class="form-group">
 							<textarea id="sampleText" class="form-control" rows="15" style="min-width: 100%" readonly>@((string)Model.SampleText)</textarea>
 						</div>
+					</div>
+					<div class="card-footer">
+						<p class="text-dark">Total Char Count: <span class="badge badge-success" id="SampleCharCount">@Model.SampleCharCount</span></p>
+						<p class="text-dark">Total Word Count: <span class="badge badge-primary" id="SampleWordCount">@Model.SampleWordCount</span></p>
+
 					</div>
 				</div>
 				<div class="card">
@@ -142,6 +159,11 @@
 						<div class="form-group">
 							<textarea id="comparerText" class="form-control" rows="15" style="min-width: 100%" readonly>@((string)Model.ComparerText)</textarea>
 						</div>
+					</div>
+					<div class="card-footer">
+						<p class="text-dark">Total Char Count: <span class="badge badge-success" id="ComparerCharCount">@Model.ComparerCharCount</span></p>
+						<p class="text-dark">Total Word Count: <span class="badge badge-primary" id="ComparerWordCount">@Model.ComparerWordCount</span></p>
+
 					</div>
 				</div>
 				<div class="card">

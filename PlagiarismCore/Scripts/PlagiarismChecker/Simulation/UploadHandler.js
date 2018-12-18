@@ -251,6 +251,10 @@
                             $("#ButtonAnalyze").prop("disabled", false);
                             if (response) {
                                 var description = "";
+                                description += "Sample Char Length: " + response.SampleCharCount + "\n";
+                                description += "Sample Word Length: " + response.SampleWordCount + "\n";
+                                description += "Comparer Char Length: " + response.ComparerCharCount + "\n";
+                                description += "Comparer Word Length: " + response.ComparerWordCount + "\n";
                                 description += "Description: " + response.Description + "\n";
                                 description += "Percentage: " + response.PercentageInteger + "%" + "\n";
                                 description += "Max: " + response.Max + "\n";

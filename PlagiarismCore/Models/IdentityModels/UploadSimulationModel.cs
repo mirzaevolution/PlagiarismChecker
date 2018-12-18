@@ -16,5 +16,9 @@
         public string SampleText { get; set; }
         public string ComparerText { get; set; }
         public string Step { get; set; }
+        public int SampleCharCount { get; set; }
+        public int SampleWordCount { get; set; }
+        public int ComparerCharCount { get; set; }
+        public int ComparerWordCount { get; set; }
     }
 }

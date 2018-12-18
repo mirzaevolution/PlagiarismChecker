@@ -225,6 +225,10 @@
     <Compile Include="Migrations\201812151228487_AddTeacherRelationship.Designer.cs">
       <DependentUpon>201812151228487_AddTeacherRelationship.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812181213554_AddTeacherColummToSubmittedAssignment.cs" />
+    <Compile Include="Migrations\201812181213554_AddTeacherColummToSubmittedAssignment.Designer.cs">
+      <DependentUpon>201812181213554_AddTeacherColummToSubmittedAssignment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Exceptions\CustomException.cs" />
     <Compile Include="Models\Exceptions\ErrorModel.cs" />
@@ -666,6 +670,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812151228487_AddTeacherRelationship.resx">
       <DependentUpon>201812151228487_AddTeacherRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812181213554_AddTeacherColummToSubmittedAssignment.resx">
+      <DependentUpon>201812181213554_AddTeacherColummToSubmittedAssignment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

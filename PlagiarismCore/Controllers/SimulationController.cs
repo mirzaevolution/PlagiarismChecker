@@ -56,6 +56,7 @@ namespace PlagiarismCore.Controllers
             var resultArr = Regex.Split(text, tokenizingPattern);
             return resultArr;
         }
+
         public string Purifying(string text)
         {
             string[] tokenizedString = TokenizingArray(text);
@@ -112,6 +113,7 @@ namespace PlagiarismCore.Controllers
             {
                 if (!string.IsNullOrEmpty(word))
                 {
+                    totalWords++;
                     sb.AppendLine(word);
                 }
             }
@@ -197,6 +199,17 @@ namespace PlagiarismCore.Controllers
                 .ToArray();
             return result;
         }
+
+
+        public int WordCount(string text)
+        {
+            if (!string.IsNullOrEmpty(text))
+            {
+                string pattern = @"[\w\d\@!_?""'&()%-]";
+                return Regex.Matches(text, pattern, RegexOptions.Compiled | RegexOptions.Multiline | RegexOptions.IgnoreCase).Count;
+            }
+            return 0;
+        }
         #endregion
 
         #region Web
@@ -223,6 +236,16 @@ namespace PlagiarismCore.Controllers
                     string comparerFileOriginalText = string.Empty;
                     sampleFileOriginalText = PDFReader.ExtractTextFromPdf(sampleFile.InputStream);
                     comparerFileOriginalText = PDFReader.ExtractTextFromPdf(comparerFile.InputStream);
+
+                    int sampleCharCount = sampleFileOriginalText.Replace("\r","").Length;
+                    int comparerCharCount = comparerFileOriginalText.Replace("\r", "").Length;
+
+                    int sampleWordCount = WordCount(sampleFileOriginalText);
+                    int comparerWordCount = WordCount(comparerFileOriginalText);
+                    model.SampleCharCount = sampleCharCount;
+                    model.SampleWordCount = sampleWordCount;
+                    model.ComparerCharCount = comparerCharCount;
+                    model.ComparerWordCount = comparerWordCount;
                     model.Step = UploadSimulationSteps.INIT;
                     model.SampleText = sampleFileOriginalText;
                     model.ComparerText = comparerFileOriginalText;
@@ -310,12 +333,29 @@ namespace PlagiarismCore.Controllers
         [HttpPost]
         public JsonResult Check(string sample, string comparer)
         {
+            int sampleCharCount = sample.Length;
+            int comparerCharCount = comparer.Length;
+
+            int sampleWordCount = WordCount(sample);
+            int comparerWordCount = WordCount(comparer);
+
             TextProcessing textProcessing = new TextProcessing(BaseWords.GetBaseWords());
             string[] sampleArray = textProcessing.Process(sample);
             string[] comparerArray = textProcessing.Process(comparer);
             PlagiarismChecker checker = new PlagiarismChecker();
             PlagiarismModel result = checker.Check(sampleArray, comparerArray);
-            return Json(result);
+            return Json(new
+            {
+                result.CalculationTime,
+                result.Description,
+                result.Distance,
+                Max = Math.Max(sampleCharCount,comparerCharCount),
+                result.PercentageInteger,
+                SampleCharCount = sampleCharCount,
+                SampleWordCount = sampleWordCount,
+                ComparerCharCount = comparerCharCount,
+                ComparerWordCount = comparerWordCount
+            });
         }
         #endregion
     }

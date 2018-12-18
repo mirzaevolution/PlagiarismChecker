@@ -185,7 +185,7 @@ let Page = {
                     data: "StudentName",
                     render: function (data, type, row) {
                         if (type === 'display') {
-                            var link = "/ManageAdmin/StudentDetail/" + row.StudentId;
+                            var link = "/ManageTeacher/StudentDetail/" + row.StudentId;
                             data = "<a href='" + link + "' target='_blank'>" + data + "</a>";
                         }
                         return data;
